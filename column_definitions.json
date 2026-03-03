@@ -1,0 +1,7650 @@
+[
+  {
+    "table_name": "TB_SEXDSTN_SELNG",
+    "table_name_kr": "성연령별 매출",
+    "subject": "축제 매출",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 3,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "SVC_INDUTY_SCLAS_CD",
+        "column_name_kr": "서비스업종소분류코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TOT_SALAMT",
+        "column_name_kr": "총매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "MSALAMT",
+        "column_name_kr": "남성매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "FSALAMT",
+        "column_name_kr": "여성매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "TOT_DCNT",
+        "column_name_kr": "총매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "MDCNT",
+        "column_name_kr": "남성매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "FDCNT",
+        "column_name_kr": "여성매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_AGRDE_SELNG",
+    "table_name_kr": "연령대별매출",
+    "subject": "축제 매출",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 3,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "SVC_INDUTY_SCLAS_CD",
+        "column_name_kr": "서비스업종소분류코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TOT_SALAMT",
+        "column_name_kr": "총매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "GNR20_SALAMT",
+        "column_name_kr": "20대 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "GNR30_SALAMT",
+        "column_name_kr": "30대 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "GNR40_SALAMT",
+        "column_name_kr": "40대 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "GNR50_SALAMT",
+        "column_name_kr": "50대 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "GNR60_SALAMT",
+        "column_name_kr": "60대 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "GNR70_SALAMT",
+        "column_name_kr": "70대 이상 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "TOT_DCNT",
+        "column_name_kr": "총매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "GNR20_DCNT",
+        "column_name_kr": "20대 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "GNR30_DCNT",
+        "column_name_kr": "30대 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "GNR40_DCNT",
+        "column_name_kr": "40대 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "GNR50_DCNT",
+        "column_name_kr": "50대 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "GNR60_DCNT",
+        "column_name_kr": "60대 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "GNR70_DCNT",
+        "column_name_kr": "70대 이상 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_TMZON_SELNG",
+    "table_name_kr": "시간대별 매출",
+    "subject": "축제 매출",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 3,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "SVC_INDUTY_SCLAS_CD",
+        "column_name_kr": "서비스업종소분류코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TOT_SALAMT",
+        "column_name_kr": "총매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "T6_SALAMT",
+        "column_name_kr": "6시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "T7_SALAMT",
+        "column_name_kr": "7시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "T8_SALAMT",
+        "column_name_kr": "8시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "T9_SALAMT",
+        "column_name_kr": "9시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "T10_SALAMT",
+        "column_name_kr": "10시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "T11_SALAMT",
+        "column_name_kr": "11시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "T12_SALAMT",
+        "column_name_kr": "12시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "T13_SALAMT",
+        "column_name_kr": "13시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "T14_SALAMT",
+        "column_name_kr": "14시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "T15_SALAMT",
+        "column_name_kr": "15시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "T16_SALAMT",
+        "column_name_kr": "16시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "T17_SALAMT",
+        "column_name_kr": "17시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "T18_SALAMT",
+        "column_name_kr": "18시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 18,
+        "column_name": "T19_SALAMT",
+        "column_name_kr": "19시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 19,
+        "column_name": "T20_SALAMT",
+        "column_name_kr": "20시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 20,
+        "column_name": "T21_SALAMT",
+        "column_name_kr": "21시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 21,
+        "column_name": "T22_SALAMT",
+        "column_name_kr": "22시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 22,
+        "column_name": "T23_SALAMT",
+        "column_name_kr": "23시 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 23,
+        "column_name": "TOT_DCNT",
+        "column_name_kr": "총매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 24,
+        "column_name": "T6_DCNT",
+        "column_name_kr": "6시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 25,
+        "column_name": "T7_DCNT",
+        "column_name_kr": "7시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 26,
+        "column_name": "T8_DCNT",
+        "column_name_kr": "8시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 27,
+        "column_name": "T9_DCNT",
+        "column_name_kr": "9시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 28,
+        "column_name": "T10_DCNT",
+        "column_name_kr": "10시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 29,
+        "column_name": "T11_DCNT",
+        "column_name_kr": "11시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 30,
+        "column_name": "T12_DCNT",
+        "column_name_kr": "12시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 31,
+        "column_name": "T13_DCNT",
+        "column_name_kr": "13시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 32,
+        "column_name": "T14_DCNT",
+        "column_name_kr": "14시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 33,
+        "column_name": "T15_DCNT",
+        "column_name_kr": "15시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 34,
+        "column_name": "T16_DCNT",
+        "column_name_kr": "16시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 35,
+        "column_name": "T17_DCNT",
+        "column_name_kr": "17시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 36,
+        "column_name": "T18_DCNT",
+        "column_name_kr": "18시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 37,
+        "column_name": "T19_DCNT",
+        "column_name_kr": "19시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 38,
+        "column_name": "T20_DCNT",
+        "column_name_kr": "20시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 39,
+        "column_name": "T21_DCNT",
+        "column_name_kr": "21시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 40,
+        "column_name": "T22_DCNT",
+        "column_name_kr": "22시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 41,
+        "column_name": "T23_DCNT",
+        "column_name_kr": "23시 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_NATION_SELNG",
+    "table_name_kr": "내/외국인별 매출",
+    "subject": "축제 매출",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 3,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "SVC_INDUTY_SCLAS_CD",
+        "column_name_kr": "서비스업종소분류코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TOT_SALAMT",
+        "column_name_kr": "총매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "NATIVE_SALAMT",
+        "column_name_kr": "내국인 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "FRGNR_SALAMT",
+        "column_name_kr": "외국인 매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "TOT_DCNT",
+        "column_name_kr": "총매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "NATIVE_DCNT",
+        "column_name_kr": "내국인 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "FRGNR_DCNT",
+        "column_name_kr": "외국인 매출건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_INFLOW_SELNG",
+    "table_name_kr": "유입지별 매출",
+    "subject": "축제 매출",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 3,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "SVC_INDUTY_SCLAS_CD",
+        "column_name_kr": "서비스업종소분류코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TOT_SALAMT",
+        "column_name_kr": "총매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "WHTHRC_SALAMT",
+        "column_name_kr": "관내 매출(동일 행정동)",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "NEARBY_SALAMT",
+        "column_name_kr": "인접 매출(동일 시군구)",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "OUTHRC_SALAMT",
+        "column_name_kr": "관외 매출(그 외)",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "TOT_DCNT",
+        "column_name_kr": "총매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "WHTHRC_DCNT",
+        "column_name_kr": "관내 매출건수(동일 행정동)",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "NEARBY_DCNT",
+        "column_name_kr": "인접 매출건수(동일 시군구)",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "OUTHRC_DCNT",
+        "column_name_kr": "관외 매출건수(그 외)",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_SEXDSTN_VISIT_POPLTN",
+    "table_name_kr": "성별 방문인구 수",
+    "subject": "축제 방문인구",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "TOT_VIPOP",
+        "column_name_kr": "총방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "MVIPOP",
+        "column_name_kr": "남성방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "FVIPOP",
+        "column_name_kr": "여성방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_AGRDE_VISIT_POPLTN",
+    "table_name_kr": "연령대별 방문 인구 수",
+    "subject": "축제 방문인구",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "TOT_VIPOP",
+        "column_name_kr": "총방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "GNR20_VIPOP",
+        "column_name_kr": "20대 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "GNR30_VIPOP",
+        "column_name_kr": "30대 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "GNR40_VIPOP",
+        "column_name_kr": "40대 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "GNR50_VIPOP",
+        "column_name_kr": "50대 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "GNR60_VIPOP",
+        "column_name_kr": "60대 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "GNR70_VIPOP",
+        "column_name_kr": "70대 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_TMZON_VISIT_POPLTN",
+    "table_name_kr": "시간대별 방문인구 수",
+    "subject": "축제 방문인구",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "TOT_VIPOP",
+        "column_name_kr": "총방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "T6_VIPOP",
+        "column_name_kr": "6시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "T7_VIPOP",
+        "column_name_kr": "7시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "T8_VIPOP",
+        "column_name_kr": "8시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "T9_VIPOP",
+        "column_name_kr": "9시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "T10_VIPOP",
+        "column_name_kr": "10시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "T11_VIPOP",
+        "column_name_kr": "11시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "T12_VIPOP",
+        "column_name_kr": "12시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "T13_VIPOP",
+        "column_name_kr": "13시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 18,
+        "column_name": "T14_VIPOP",
+        "column_name_kr": "14시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 19,
+        "column_name": "T15_VIPOP",
+        "column_name_kr": "15시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 20,
+        "column_name": "T16_VIPOP",
+        "column_name_kr": "16시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 21,
+        "column_name": "T17_VIPOP",
+        "column_name_kr": "17시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 22,
+        "column_name": "T18_VIPOP",
+        "column_name_kr": "18시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 23,
+        "column_name": "T19_VIPOP",
+        "column_name_kr": "19시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 24,
+        "column_name": "T20_VIPOP",
+        "column_name_kr": "20시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 25,
+        "column_name": "T21_VIPOP",
+        "column_name_kr": "21시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 26,
+        "column_name": "T22_VIPOP",
+        "column_name_kr": "22시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 27,
+        "column_name": "T23_VIPOP",
+        "column_name_kr": "23시 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_NATION_VISIT_POPLTN",
+    "table_name_kr": "내/외국인별 방문인구 수",
+    "subject": "축제 방문인구",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "TOT_VIPOP",
+        "column_name_kr": "총방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "NATIVE_VIPOP",
+        "column_name_kr": "내국인 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "FRGNR_VIPOP",
+        "column_name_kr": "외국인 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_INFLOW_VISIT_POPLTN",
+    "table_name_kr": "유입지별 방문인구 수",
+    "subject": "축제 방문인구",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "TOT_VIPOP",
+        "column_name_kr": "총방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "WHTHRC_VIPOP",
+        "column_name_kr": "관내 방문인구(동일 행정동)",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "NEARBY_VIPOP",
+        "column_name_kr": "인접 방문인구(동일 시군구)",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "OUTHRC_VIPOP",
+        "column_name_kr": "관외 방문인구(그 외)",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_DAYT_POPLTN",
+    "table_name_kr": "요일별/연령별/성별 생활인구 수",
+    "subject": "생활인구",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "CTY_CD",
+        "column_name_kr": "시군구 코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "DAY_CD",
+        "column_name_kr": "요일코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": "tb_cd_info 테이블"
+      },
+      {
+        "order": 5,
+        "column_name": "TOT_DAYTPOP",
+        "column_name_kr": "총거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "MDAYTPOP",
+        "column_name_kr": "남성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "GNR_UNDER_20_MDAYTPOP",
+        "column_name_kr": "20대 미만 남성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "GNR20_MDAYTPOP",
+        "column_name_kr": "20대 남성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "GNR30_MDAYTPOP",
+        "column_name_kr": "30대 남성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "GNR40_MDAYTPOP",
+        "column_name_kr": "40대 남성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "GNR50_MDAYTPOP",
+        "column_name_kr": "50대 남성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "GNR60_MDAYTPOP",
+        "column_name_kr": "60대 남성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "GNR_OVER_70_MDAYTPOP",
+        "column_name_kr": "70대 이상 남성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "FDAYTPOP",
+        "column_name_kr": "여성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "GNR_UNDER_20_FDAYTPOP",
+        "column_name_kr": "20대 미만 여성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "GNR20_FDAYTPOP",
+        "column_name_kr": "20대 여성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "GNR30_FDAYTPOP",
+        "column_name_kr": "30대 여성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 18,
+        "column_name": "GNR40_FDAYTPOP",
+        "column_name_kr": "40대 여성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 19,
+        "column_name": "GNR50_FDAYTPOP",
+        "column_name_kr": "50대 여성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 20,
+        "column_name": "GNR60_FDAYTPOP",
+        "column_name_kr": "60대 여성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 21,
+        "column_name": "GNR_OVER_70_FDAYTPOP",
+        "column_name_kr": "70대 이상 여성거주인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_TMZON_DAYT_POPLTN",
+    "table_name_kr": "시간대별 생활인구 수",
+    "subject": "생활인구",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "CTY_CD",
+        "column_name_kr": "시군구 코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TOT_DAYTPOP",
+        "column_name_kr": "총생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "T0_T6_DAYTPOP",
+        "column_name_kr": "0시 ~ 6시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "T7_DAYTPOP",
+        "column_name_kr": "7시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "T8_DAYTPOP",
+        "column_name_kr": "8시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "T9_DAYTPOP",
+        "column_name_kr": "9시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "T10_DAYTPOP",
+        "column_name_kr": "10시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "T11_DAYTPOP",
+        "column_name_kr": "11시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "T12_DAYTPOP",
+        "column_name_kr": "12시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "T13_DAYTPOP",
+        "column_name_kr": "13시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "T14_DAYTPOP",
+        "column_name_kr": "14시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "T15_DAYTPOP",
+        "column_name_kr": "15시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "T16_DAYTPOP",
+        "column_name_kr": "16시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "T17_DAYTPOP",
+        "column_name_kr": "17시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "T18_DAYTPOP",
+        "column_name_kr": "18시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 18,
+        "column_name": "T19_DAYTPOP",
+        "column_name_kr": "19시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 19,
+        "column_name": "T20_DAYTPOP",
+        "column_name_kr": "20시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 20,
+        "column_name": "T21_DAYTPOP",
+        "column_name_kr": "21시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 21,
+        "column_name": "T22_DAYTPOP",
+        "column_name_kr": "22시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 22,
+        "column_name": "T23_DAYTPOP",
+        "column_name_kr": "23시 생활인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_CNSMP_AMOUNT",
+    "table_name_kr": "요일별/연령별/성별 소비금액",
+    "subject": "행정동 소비금액",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 3,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "CTY_CD",
+        "column_name_kr": "시군구코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "SVC_INDUTY_SCLAS_CD",
+        "column_name_kr": "서비스업종소분류코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "DAY_CD",
+        "column_name_kr": "요일코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TOT_CNSAMT",
+        "column_name_kr": "총소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "MCNSAMT",
+        "column_name_kr": "남성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "GNR_UNDER_20_MCNSAMT",
+        "column_name_kr": "20대 미만 남성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "GNR20_MCNSAMT",
+        "column_name_kr": "20대 남성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "GNR30_MCNSAMT",
+        "column_name_kr": "30대 남성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "GNR40_MCNSAMT",
+        "column_name_kr": "40대 남성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "GNR50_MCNSAMT",
+        "column_name_kr": "50대 남성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "GNR60_MCNSAMT",
+        "column_name_kr": "60대 남성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "GNR_OVER_70_MCNSAMT",
+        "column_name_kr": "70대 이상 남성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "FCNSAMT",
+        "column_name_kr": "여성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "GNR_UNDER_20_FCNSAMT",
+        "column_name_kr": "20대 미만 남성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "GNR20_FCNSAMT",
+        "column_name_kr": "20대 여성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "GNR30_FCNSAMT",
+        "column_name_kr": "30대 여성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "GNR40_FCNSAMT",
+        "column_name_kr": "40대 여성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 18,
+        "column_name": "GNR50_FCNSAMT",
+        "column_name_kr": "50대 여성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 19,
+        "column_name": "GNR60_FCNSAMT",
+        "column_name_kr": "60대 여성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 20,
+        "column_name": "GNR_OVER_70_FCNSAMT",
+        "column_name_kr": "70대 이상 여성소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_TMZON_CNSMP_AMOUNT",
+    "table_name_kr": "시간대별 소비금액",
+    "subject": "행정동 소비금액",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 3,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "CTY_CD",
+        "column_name_kr": "시군구코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "SVC_INDUTY_SCLAS_CD",
+        "column_name_kr": "서비스업종소분류코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "TOT_CNSAMT",
+        "column_name_kr": "총소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "T0_T6_CNSAMT",
+        "column_name_kr": "0시 ~ 6시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "T7_CNSAMT",
+        "column_name_kr": "7시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "T8_CNSAMT",
+        "column_name_kr": "8시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "T9_CNSAMT",
+        "column_name_kr": "9시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "T10_CNSAMT",
+        "column_name_kr": "10시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "T11_CNSAMT",
+        "column_name_kr": "11시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "T12_CNSAMT",
+        "column_name_kr": "12시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "T13_CNSAMT",
+        "column_name_kr": "13시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "T14_CNSAMT",
+        "column_name_kr": "14시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "T15_CNSAMT",
+        "column_name_kr": "15시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "T16_CNSAMT",
+        "column_name_kr": "16시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "T17_CNSAMT",
+        "column_name_kr": "17시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 18,
+        "column_name": "T18_CNSAMT",
+        "column_name_kr": "18시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 19,
+        "column_name": "T19_CNSAMT",
+        "column_name_kr": "19시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 20,
+        "column_name": "T20_CNSAMT",
+        "column_name_kr": "20시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 21,
+        "column_name": "T21_CNSAMT",
+        "column_name_kr": "21시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 22,
+        "column_name": "T22_CNSAMT",
+        "column_name_kr": "22시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 23,
+        "column_name": "T23_CNSAMT",
+        "column_name_kr": "23시 소비금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_INTRST_REGION_SM",
+    "table_name_kr": "관심지역 집계",
+    "subject": "축제관련 집계 테이블",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "TOT_VIPOP",
+        "column_name_kr": "총 방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "PRVYY_PROVS_VIPOP_IRDS_RT",
+        "column_name_kr": "전년 대비 방문 인구 증감율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TOT_SALAMT",
+        "column_name_kr": "총매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "PRVYY_PROVS_SALAMT_IRDS_RT",
+        "column_name_kr": "전년 대비 매출 증감율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "MXMM_VISIT_DE",
+        "column_name_kr": "최대 방문일자",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "MXMM_VIPOP_CO",
+        "column_name_kr": "최대 방문인구 수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMBER",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_AGRDE_MAIN_SELNG_INDUTY_RANK_SM",
+    "table_name_kr": "연령대별 주요 매출 업종 순위 집계",
+    "subject": "축제관련 집계 테이블",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "AGRDE_CD",
+        "column_name_kr": "연령대코드",
+        "is_pk": 3,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 3,
+        "scale": null,
+        "remark": "tb_cd_info 테이블"
+      },
+      {
+        "order": 3,
+        "column_name": "SVC_INDUTY_SCLAS_CD",
+        "column_name_kr": "서비스업종소분류코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "RANK",
+        "column_name_kr": "순위",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "SALAMT_RT",
+        "column_name_kr": "매출금액 비율",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_NATION_MAIN_SELNG_INDUTY_RANK_SM",
+    "table_name_kr": "내외국인 주요 매출 업종 순위 집계",
+    "subject": "축제관련 집계 테이블",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "NATION_CD",
+        "column_name_kr": "내외국인코드",
+        "is_pk": 3,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 3,
+        "scale": null,
+        "remark": "tb_cd_info 테이블"
+      },
+      {
+        "order": 3,
+        "column_name": "SVC_INDUTY_SCLAS_CD",
+        "column_name_kr": "서비스업종소분류코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "RANK",
+        "column_name_kr": "순위",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "SALAMT",
+        "column_name_kr": "매출금액",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "SALAMT_RT",
+        "column_name_kr": "매출금액 비율",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_INFLOW_VISIT_POPLTN_SELNG_SM",
+    "table_name_kr": "유입지별 방문인구 매출 집계",
+    "subject": "축제관련 집계 테이블",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "INFLOW_CD",
+        "column_name_kr": "유입지코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": "tb_cd_info 테이블"
+      },
+      {
+        "order": 3,
+        "column_name": "VIPOP",
+        "column_name_kr": "방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "VIPOP_RT",
+        "column_name_kr": "방문인구 비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "SALAMT",
+        "column_name_kr": "매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "SALAMT_RT",
+        "column_name_kr": "매출금액 비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_NATION_VISIT_POPLTN_SELNG_SM",
+    "table_name_kr": "내외국인 방문인구 매출 집계",
+    "subject": "축제관련 집계 테이블",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "NATION_CD",
+        "column_name_kr": "내외국인코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": "tb_cd_info 테이블"
+      },
+      {
+        "order": 3,
+        "column_name": "VIPOP",
+        "column_name_kr": "방문인구",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "VIPOP_RT",
+        "column_name_kr": "방문인구 비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "SALAMT",
+        "column_name_kr": "매출금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "SALAMT_RT",
+        "column_name_kr": "매출금액 비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_INTRST_REGION",
+    "table_name_kr": "관심지역",
+    "subject": "축제관련 집계 테이블",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "TOT_VIPOP",
+        "column_name_kr": "총방문인구",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TOT_SALAMT",
+        "column_name_kr": "총매출금액",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "TOT_VIPOP_PERV1Y",
+        "column_name_kr": "전년동일방문인구",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "TOT_VIPOP_PERV2Y",
+        "column_name_kr": "재작년동일방문인구",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "TOT_SALAMT_PERV1Y",
+        "column_name_kr": "전년동일매출금액",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "TOT_SALAMT_PERV2Y",
+        "column_name_kr": "재작년동일매출금액",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_INTRST_REGION_RELM",
+    "table_name_kr": "관심지역영역",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "POPLTN_RELM",
+        "column_name_kr": "인구영역",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "GEOMETRY",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "CNSMP_RELM",
+        "column_name_kr": "소비영역",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "GEOMETRY",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "CREAT_DT",
+        "column_name_kr": "생성일시",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "UPDATE_DT",
+        "column_name_kr": "갱신일시",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_SVC_INDUTY_LCLAS",
+    "table_name_kr": "서비스업종대분류",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "SVC_INDUTY_LCLAS_CD",
+        "column_name_kr": "서비스업종대분류코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "SVC_INDUTY_LCLAS_CD_NM",
+        "column_name_kr": "서비스업종대분류코드명",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_SVC_INDUTY_SCLAS",
+    "table_name_kr": "서비스업종소분류",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "SVC_INDUTY_SCLAS_CD",
+        "column_name_kr": "서비스업종소분류코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "SVC_INDUTY_SCLAS_CD_NM",
+        "column_name_kr": "서비스업종소분류코드명",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "SVC_INDUTY_LCLAS_CD",
+        "column_name_kr": "서비스업종대분류코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_CD_INFO",
+    "table_name_kr": "코드정보",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "CD_ID",
+        "column_name_kr": "코드id",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "CD_NM",
+        "column_name_kr": "코드명",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "CD_VALUE_ORDR",
+        "column_name_kr": "코드값순서",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": 2,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "CD_VALUE",
+        "column_name_kr": "코드값",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "CD_VALUE_NM",
+        "column_name_kr": "코드값명",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_SIDO",
+    "table_name_kr": "광역시도 정보",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "SIDO_CD",
+        "column_name_kr": "광역시도코드",
+        "is_pk": 1,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 2,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "SIDO_NM",
+        "column_name_kr": "광역시도명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "REG_DATE",
+        "column_name_kr": "등록일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "SCSS_DATE",
+        "column_name_kr": "말소일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_CTY",
+    "table_name_kr": "시군구 정보",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "CTY_CD",
+        "column_name_kr": "시군구코드",
+        "is_pk": 1,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "CTY_NM",
+        "column_name_kr": "시군구명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "SIDO_CD",
+        "column_name_kr": "광역시도코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 2,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "REG_DATE",
+        "column_name_kr": "등록일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "SCSS_DATE",
+        "column_name_kr": "폐기일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_ADMI",
+    "table_name_kr": "행정동 정보",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": 1,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ADMI_NM",
+        "column_name_kr": "행정동명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "CTY_CD",
+        "column_name_kr": "시군구코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "THRD_CD",
+        "column_name_kr": "3차행정구역코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 5,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "REG_DATE",
+        "column_name_kr": "등록일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "SCSS_DATE",
+        "column_name_kr": "폐기일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_THRD",
+    "table_name_kr": "행정구역_3차행정구역",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "THRD_CD",
+        "column_name_kr": "3차행정구역코드",
+        "is_pk": 1,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 5,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "THRD_NM",
+        "column_name_kr": "3차행정구역명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "CTY_CD",
+        "column_name_kr": "시군구코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "REG_DATE",
+        "column_name_kr": "등록일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "SCSS_DATE",
+        "column_name_kr": "폐기일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_ANALYSIS_REPORT",
+    "table_name_kr": "분석 리포트",
+    "subject": "축제 영역",
+    "remark": "마스터 테이블로 이용중",
+    "columns": [
+      {
+        "order": null,
+        "column_name": "REPRT_ID",
+        "column_name_kr": "분석ID",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "시퀀스"
+      },
+      {
+        "order": null,
+        "column_name": "REPRT_NM",
+        "column_name_kr": "분석",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 50,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVENT_NM",
+        "column_name_kr": "분석",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 50,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "SIDO_CD",
+        "column_name_kr": "시도코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 2,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "SIDO_NM",
+        "column_name_kr": "시도명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "CTY_CD",
+        "column_name_kr": "시군구코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "CTY_NM",
+        "column_name_kr": "시군구명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "읍면동코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "ADMI_NM",
+        "column_name_kr": "읍면동명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVENT_PLC",
+        "column_name_kr": "행사장소",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 50,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVENT_BGNDE",
+        "column_name_kr": "행사 시작일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVENT_ENDDE",
+        "column_name_kr": "행사 종료일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVENT_BGNDE_1y",
+        "column_name_kr": "N-1년 행사 시작일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVENT_ENDDE_1y",
+        "column_name_kr": "N-1년 행사 종료일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVENT_BGNDE_2y",
+        "column_name_kr": "N-2년 행사 시작일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVENT_ENDDE_2y",
+        "column_name_kr": "N-2년 행사 종료일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVENT_AUSPC",
+        "column_name_kr": "행사 주최",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 50,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVENT_SITE",
+        "column_name_kr": "행사 사이트",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "EVNET_DC",
+        "column_name_kr": "행사 설명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TEXT",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "ANALS_STTUS",
+        "column_name_kr": "분석 상태",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 2,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "DEL_YN",
+        "column_name_kr": "삭제여부",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역 코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "REGIST_ID",
+        "column_name_kr": "등록자",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "REGIST_DT",
+        "column_name_kr": "등록일자",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": 0,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "UPDT_ID",
+        "column_name_kr": "수정자",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "UPDT_DT",
+        "column_name_kr": "수정일시",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": 0,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": null,
+        "column_name": "PREV_REGION_CD",
+        "column_name_kr": "이전 지역코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_BATCH_LOG",
+    "table_name_kr": "배치 로그",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "SN",
+        "column_name_kr": "순번",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "PK 용, 스퀀스"
+      },
+      {
+        "order": 2,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "null일 경우 all"
+      },
+      {
+        "order": 3,
+        "column_name": "PGM_ID",
+        "column_name_kr": "프로그램 ID",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "WRK_DE",
+        "column_name_kr": "수행일자",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "LOG_DT",
+        "column_name_kr": "로그 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "CURR_WRK_STEP_SEQ",
+        "column_name_kr": "현재단계순서",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "90 종료, 99 에러"
+      },
+      {
+        "order": 7,
+        "column_name": "CURR_WRK_STEP_DESC",
+        "column_name_kr": "현재단계설명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1000,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "WRK_CO",
+        "column_name_kr": "수행건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_API_LOG",
+    "table_name_kr": "API 로그",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "SN",
+        "column_name_kr": "순번",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "PK 용, 스퀀스"
+      },
+      {
+        "order": 2,
+        "column_name": "INQR_AK_BUR_C",
+        "column_name_kr": "조회요청기관코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "INQR_TERY_DV_C",
+        "column_name_kr": "조회영역구분코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 5,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "API_URL",
+        "column_name_kr": "API_URL",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 1000,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "WRK_DE",
+        "column_name_kr": "수행일자",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "LOG_DT",
+        "column_name_kr": "로그 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "CURR_WRK_STEP_SEQ",
+        "column_name_kr": "현재단계순서",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "90 종료, 99 에러"
+      },
+      {
+        "order": 8,
+        "column_name": "CURR_WRK_STEP_DESC",
+        "column_name_kr": "현재단계설명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1000,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "WRK_CO",
+        "column_name_kr": "수행건수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_SAMSUNGCARD_REGION_CD_MAPNG",
+    "table_name_kr": "삼성카드 지역코드 매핑",
+    "subject": "축제 영역",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "INQR_AK_BUR_C",
+        "column_name_kr": "조회요청기관코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "INQR_TERY_DV_C",
+        "column_name_kr": "조회영역구분코드",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 5,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "REGION_CD",
+        "column_name_kr": "지역코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_SELNG_ORG",
+    "table_name_kr": "매출데이터 원본",
+    "subject": "삼성카드_송수신데이터",
+    "remark": "최종 집계 테이블( 삼성카드 → 오픈메이트 송신)",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "INQR_AK_BUR_C",
+        "column_name_kr": "조회요청기관코드",
+        "is_pk": 1,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "INQR_TERY_DV_C",
+        "column_name_kr": "조회영역구분코드",
+        "is_pk": 2,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 5,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "APR_DT",
+        "column_name_kr": "승인일자",
+        "is_pk": 4,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TCO_TOBZ_C",
+        "column_name_kr": "당사업종코드",
+        "is_pk": 3,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "TCO_TOBZ_NM",
+        "column_name_kr": "당사업종명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 150,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "TOT_AMT",
+        "column_name_kr": "총승인금액합계",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "TOT_CNT",
+        "column_name_kr": "총승인건수합계",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "MAN_AGE20_LSTH_APR_AM_RT",
+        "column_name_kr": "남자20세미만승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "MAN_ER20_APR_AM_RT",
+        "column_name_kr": "남자20대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "MAN_ER30_APR_AM_RT",
+        "column_name_kr": "남자30대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "MAN_ER40_APR_AM_RT",
+        "column_name_kr": "남자40대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "MAN_ER50_APR_AM_RT",
+        "column_name_kr": "남자50대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "MAN_ER60_APR_AM_RT",
+        "column_name_kr": "남자60대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "MAN_ER70_APR_AM_RT",
+        "column_name_kr": "남자70대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "MAN_AGE80_MRTN_APR_AM_RT",
+        "column_name_kr": "남자80세이상승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "MAN_AGE20_LSTH_APR_CT_RT",
+        "column_name_kr": "남자20세미만승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "MAN_ER20_APR_CT_RT",
+        "column_name_kr": "남자20대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 18,
+        "column_name": "MAN_ER30_APR_CT_RT",
+        "column_name_kr": "남자30대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 19,
+        "column_name": "MAN_ER40_APR_CT_RT",
+        "column_name_kr": "남자40대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 20,
+        "column_name": "MAN_ER50_APR_CT_RT",
+        "column_name_kr": "남자50대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 21,
+        "column_name": "MAN_ER60_APR_CT_RT",
+        "column_name_kr": "남자60대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 22,
+        "column_name": "MAN_ER70_APR_CT_RT",
+        "column_name_kr": "남자70대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 23,
+        "column_name": "MAN_AGE80_MRTN_APR_CT_RT",
+        "column_name_kr": "남자80세이상승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 24,
+        "column_name": "FMLE_AGE20_LSTH_APR_AM_RT",
+        "column_name_kr": "여자20세미만승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 25,
+        "column_name": "FMLE_ER20_APR_AM_RT",
+        "column_name_kr": "여자20대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 26,
+        "column_name": "FMLE_ER30_APR_AM_RT",
+        "column_name_kr": "여자30대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 27,
+        "column_name": "FMLE_ER40_APR_AM_RT",
+        "column_name_kr": "여자40대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 28,
+        "column_name": "FMLE_ER50_APR_AM_RT",
+        "column_name_kr": "여자50대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 29,
+        "column_name": "FMLE_ER60_APR_AM_RT",
+        "column_name_kr": "여자60대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 30,
+        "column_name": "FMLE_ER70_APR_AM_RT",
+        "column_name_kr": "여자70대승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 31,
+        "column_name": "FMLE_AGE80_MRTN_APR_AM_RT",
+        "column_name_kr": "여자80세이상승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 32,
+        "column_name": "FMLE_AGE20_LSTH_APR_CT_RT",
+        "column_name_kr": "여자20세미만승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 33,
+        "column_name": "FMLE_ER20_APR_CT_RT",
+        "column_name_kr": "여자20대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 34,
+        "column_name": "FMLE_ER30_APR_CT_RT",
+        "column_name_kr": "여자30대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 35,
+        "column_name": "FMLE_ER40_APR_CT_RT",
+        "column_name_kr": "여자40대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 36,
+        "column_name": "FMLE_ER50_APR_CT_RT",
+        "column_name_kr": "여자50대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 37,
+        "column_name": "FMLE_ER60_APR_CT_RT",
+        "column_name_kr": "여자60대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 38,
+        "column_name": "FMLE_ER70_APR_CT_RT",
+        "column_name_kr": "여자70대승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 39,
+        "column_name": "FMLE_AGE80_MRTN_APR_CT_RT",
+        "column_name_kr": "여자80세이상승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 40,
+        "column_name": "H06_LESS_APR_AM_RT",
+        "column_name_kr": "06시이하승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 41,
+        "column_name": "H06_APR_AM_RT",
+        "column_name_kr": "06시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 42,
+        "column_name": "H07_APR_AM_RT",
+        "column_name_kr": "07시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 43,
+        "column_name": "H08_APR_AM_RT",
+        "column_name_kr": "08시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 44,
+        "column_name": "H09_APR_AM_RT",
+        "column_name_kr": "09시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 45,
+        "column_name": "H10_APR_AM_RT",
+        "column_name_kr": "10시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 46,
+        "column_name": "H11_APR_AM_RT",
+        "column_name_kr": "11시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 47,
+        "column_name": "H12_APR_AM_RT",
+        "column_name_kr": "12시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 48,
+        "column_name": "H13_APR_AM_RT",
+        "column_name_kr": "13시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 49,
+        "column_name": "H14_APR_AM_RT",
+        "column_name_kr": "14시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 50,
+        "column_name": "H15_APR_AM_RT",
+        "column_name_kr": "15시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 51,
+        "column_name": "H16_APR_AM_RT",
+        "column_name_kr": "16시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 52,
+        "column_name": "H17_APR_AM_RT",
+        "column_name_kr": "17시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 53,
+        "column_name": "H18_APR_AM_RT",
+        "column_name_kr": "18시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 54,
+        "column_name": "H19_APR_AM_RT",
+        "column_name_kr": "19시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 55,
+        "column_name": "H20_APR_AM_RT",
+        "column_name_kr": "20시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 56,
+        "column_name": "H21_APR_AM_RT",
+        "column_name_kr": "21시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 57,
+        "column_name": "H22_APR_AM_RT",
+        "column_name_kr": "22시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 58,
+        "column_name": "H23_APR_AM_RT",
+        "column_name_kr": "23시승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 59,
+        "column_name": "H06_LESS_APR_CT_RT",
+        "column_name_kr": "06시이하승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 60,
+        "column_name": "H06_APR_CT_RT",
+        "column_name_kr": "06시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 61,
+        "column_name": "H07_APR_CT_RT",
+        "column_name_kr": "07시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 62,
+        "column_name": "H08_APR_CT_RT",
+        "column_name_kr": "08시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 63,
+        "column_name": "H09_APR_CT_RT",
+        "column_name_kr": "09시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 64,
+        "column_name": "H10_APR_CT_RT",
+        "column_name_kr": "10시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 65,
+        "column_name": "H11_APR_CT_RT",
+        "column_name_kr": "11시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 66,
+        "column_name": "H12_APR_CT_RT",
+        "column_name_kr": "12시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 67,
+        "column_name": "H13_APR_CT_RT",
+        "column_name_kr": "13시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 68,
+        "column_name": "H14_APR_CT_RT",
+        "column_name_kr": "14시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 69,
+        "column_name": "H15_APR_CT_RT",
+        "column_name_kr": "15시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 70,
+        "column_name": "H16_APR_CT_RT",
+        "column_name_kr": "16시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 71,
+        "column_name": "H17_APR_CT_RT",
+        "column_name_kr": "17시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 72,
+        "column_name": "H18_APR_CT_RT",
+        "column_name_kr": "18시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 73,
+        "column_name": "H19_APR_CT_RT",
+        "column_name_kr": "19시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 74,
+        "column_name": "H20_APR_CT_RT",
+        "column_name_kr": "20시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 75,
+        "column_name": "H21_APR_CT_RT",
+        "column_name_kr": "21시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 76,
+        "column_name": "H22_APR_CT_RT",
+        "column_name_kr": "22시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 77,
+        "column_name": "H23_APR_CT_RT",
+        "column_name_kr": "23시승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 78,
+        "column_name": "LVIN_APR_AM_RT",
+        "column_name_kr": "내지인승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 79,
+        "column_name": "NEBHD_RCE_APR_AM_RT",
+        "column_name_kr": "주변거주승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 80,
+        "column_name": "LVOUT_APR_AM_RT",
+        "column_name_kr": "외지인승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 81,
+        "column_name": "LVIN_APR_CT_RT",
+        "column_name_kr": "내지인승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 82,
+        "column_name": "NEBHD_RCE_APR_CT_RT",
+        "column_name_kr": "주변거주승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 83,
+        "column_name": "LVOUT_APR_CT_RT",
+        "column_name_kr": "외지인승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 84,
+        "column_name": "DOM_RCE_APR_AM_RT",
+        "column_name_kr": "국내거주승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 85,
+        "column_name": "FRNR_APR_AM_RT",
+        "column_name_kr": "외국인승인금액비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 86,
+        "column_name": "DOM_RCE_APR_CT_RT",
+        "column_name_kr": "국내거주승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 87,
+        "column_name": "FRNR_APR_CT_RT",
+        "column_name_kr": "외국인승인건수비율",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 9,
+        "scale": 4,
+        "remark": null
+      },
+      {
+        "order": 88,
+        "column_name": "LDNG_TS",
+        "column_name_kr": "적재상세일시",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": 0,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_MRHST_META_ORG",
+    "table_name_kr": "가맹점 META 데이터 원천",
+    "subject": "삼성카드_송수신데이터",
+    "remark": "가맹점 META 원천 ( 삼성카드 → 오픈메이트 송신)",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "CRI_YM",
+        "column_name_kr": "기준년월",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "BZRNO",
+        "column_name_kr": "사업자등록번호",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "MRC_ADR_WGS_LATD",
+        "column_name_kr": "가맹점주소WGS위도",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 13,
+        "scale": 10,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "MRC_ADR_WGS_LONG",
+        "column_name_kr": "가맹점주소WGS경도",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 13,
+        "scale": 10,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "DDD",
+        "column_name_kr": "전화지역번호",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "ZIP",
+        "column_name_kr": "우편번호",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "LTN",
+        "column_name_kr": "지번",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 2,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "TCO_TOBZ_C",
+        "column_name_kr": "당사업종코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "TCO_TOBZ_NM",
+        "column_name_kr": "당사업종명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 150,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_MRHST_META",
+    "table_name_kr": "가맹점 META 데이터",
+    "subject": "삼성카드_송수신데이터",
+    "remark": "삼성카드 가맹점 META 원천 데이터를 가공한 데이터",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "SN",
+        "column_name_kr": "순번",
+        "is_pk": 3,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "PK 용"
+      },
+      {
+        "order": 2,
+        "column_name": "CRI_YM",
+        "column_name_kr": "기준년월",
+        "is_pk": 1,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "BZRNO",
+        "column_name_kr": "사업자등록번호",
+        "is_pk": 2,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "MRC_ADR_WGS_LATD",
+        "column_name_kr": "가맹점주소WGS위도",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 13,
+        "scale": 10,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "MRC_ADR_WGS_LONG",
+        "column_name_kr": "가맹점주소WGS경도",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 13,
+        "scale": 10,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "DDD",
+        "column_name_kr": "전화지역번호",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "ZIP",
+        "column_name_kr": "우편번호",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "LTN",
+        "column_name_kr": "지번",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 2,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "TCO_TOBZ_C",
+        "column_name_kr": "당사업종코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "TCO_TOBZ_NM",
+        "column_name_kr": "당사업종명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 150,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_MRHST_CND",
+    "table_name_kr": "가맹점 조회 조건",
+    "subject": "삼성카드_송수신데이터",
+    "remark": "조회조건 반영 (오픈메이트 → 삼성카드 송신)",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "SN",
+        "column_name_kr": "순번",
+        "is_pk": 4,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "PK 용"
+      },
+      {
+        "order": 2,
+        "column_name": "INQR_AK_BUR_C",
+        "column_name_kr": "조회요청기관코드",
+        "is_pk": 1,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "INQR_TERY_DV_C",
+        "column_name_kr": "조회영역구분코드",
+        "is_pk": 2,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 5,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "BZRNO",
+        "column_name_kr": "사업자번호",
+        "is_pk": 3,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "MRC_ADR_WGS_LATD",
+        "column_name_kr": "가맹점위도",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 13,
+        "scale": 10,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "MRC_ADR_WGS_LONG",
+        "column_name_kr": "가맹점경도",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": 13,
+        "scale": 10,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "DDD",
+        "column_name_kr": "가맹점지역번호",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "ZIP",
+        "column_name_kr": "가맹점우편코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "LTN",
+        "column_name_kr": "가맹점지번",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 2,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "TCO_TOBZ_C",
+        "column_name_kr": "당사업종코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "TCO_TOBZ_NM",
+        "column_name_kr": "당사업종명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 150,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "START_DATE",
+        "column_name_kr": "조회요청 시작일자",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "END_DATE",
+        "column_name_kr": "조회요청 종료일자",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "GET_BZR_YN",
+        "column_name_kr": "자동추출여부",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_MAIN_FCLTY_INFO",
+    "table_name_kr": "주요 시설 정보",
+    "subject": "시설물",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "SN",
+        "column_name_kr": "순번",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "PK 용"
+      },
+      {
+        "order": 1,
+        "column_name": "STDR_YM",
+        "column_name_kr": "기준년월",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "FCLTY_SCLAS_CD",
+        "column_name_kr": "시설소분류코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 5,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "FCLTY_NM",
+        "column_name_kr": "시설이름",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "X_CRDNT",
+        "column_name_kr": "X좌표값( EPSG 4326 ) 위도",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "Y_CRDNT",
+        "column_name_kr": "Y좌표값( EPSG 4326 ) 경도",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_PRKPLCE_INFO",
+    "table_name_kr": "주차장 정보",
+    "subject": "시설물",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "SN",
+        "column_name_kr": "순번",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "PK 용"
+      },
+      {
+        "order": 2,
+        "column_name": "STDR_YM",
+        "column_name_kr": "기준년월",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": "데이터 적재한 일자기준으로 할것 …!"
+      },
+      {
+        "order": 3,
+        "column_name": "FCLTY_SCLAS_CD",
+        "column_name_kr": "시설소분류코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 5,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "PRKPLCE_NM",
+        "column_name_kr": "주차장명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "PRKCMPRT_CO",
+        "column_name_kr": "주차구획수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "X_CRDNT",
+        "column_name_kr": "X좌표값( EPSG 4326 ) 위도",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "Y_CRDNT",
+        "column_name_kr": "Y좌표값( EPSG 4326 ) 경도",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_FCLTY_STDR_PD",
+    "table_name_kr": "시설별 기준 기간",
+    "subject": "시설물",
+    "remark": "시설물별로 기준 기간 저장해둔 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "FCLTY_LCLAS_CD",
+        "column_name_kr": "시설대분류코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "DATA_STDR_PD_VALUE",
+        "column_name_kr": "데이터기준기간값",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 6,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "CREAT_DT",
+        "column_name_kr": "생성일시",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "TIMESTAMP",
+        "length": 0,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "UPDATE_DT",
+        "column_name_kr": "수정일시",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "TIMESTAMP",
+        "length": 0,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_RESIDE_POPLTN",
+    "table_name_kr": "연령별/성별 주민등록인구(거주인구) 수",
+    "subject": "시설물",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "TOT_RESPOP",
+        "column_name_kr": "총거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "MRESPOP",
+        "column_name_kr": "남성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "GNR20_MRESPOP",
+        "column_name_kr": "20대 남성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "GNR30_MRESPOP",
+        "column_name_kr": "30대 남성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "GNR40_MRESPOP",
+        "column_name_kr": "40대 남성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "GNR50_MRESPOP",
+        "column_name_kr": "50대 남성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "GNR60_MRESPOP",
+        "column_name_kr": "60대 남성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "GNR_OVER_70_MRESPOP",
+        "column_name_kr": "70대 이상 남성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "FRESPOP",
+        "column_name_kr": "여성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "GNR20_FRESPOP",
+        "column_name_kr": "20대 여성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "GNR30_FRESPOP",
+        "column_name_kr": "30대 여성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "GNR40_FRESPOP",
+        "column_name_kr": "40대 여성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "GNR50_FRESPOP",
+        "column_name_kr": "50대 여성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "GNR60_FRESPOP",
+        "column_name_kr": "60대 여성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "GNR_OVER_70_FRESPOP",
+        "column_name_kr": "70대 이상 여성거주인구수",
+        "is_pk": null,
+        "nullable": "NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_WRC_POPLTN",
+    "table_name_kr": "연령별/성별 고용인구(직장인구) 수",
+    "subject": "시설물",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "TOT_WRCPOP",
+        "column_name_kr": "총직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "MWRCPOP",
+        "column_name_kr": "남성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "GNR20_MWRCPOP",
+        "column_name_kr": "20대 남성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "GNR30_MWRCPOP",
+        "column_name_kr": "30대 남성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "GNR40_MWRCPOP",
+        "column_name_kr": "40대 남성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "GNR50_MWRCPOP",
+        "column_name_kr": "50대 남성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "GNR60_MWRCPOP",
+        "column_name_kr": "60대 남성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "GNR_OVER_70_MWRCPOP",
+        "column_name_kr": "70대 이상 남성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "FWRCPOP",
+        "column_name_kr": "여성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "GNR20_FWRCPOP",
+        "column_name_kr": "20대 여성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "GNR30_FWRCPOP",
+        "column_name_kr": "30대 여성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "GNR40_FWRCPOP",
+        "column_name_kr": "40대 여성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "GNR50_FWRCPOP",
+        "column_name_kr": "50대 여성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "GNR60_FWRCPOP",
+        "column_name_kr": "60대 여성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "GNR_OVER_70_FWRCPOP",
+        "column_name_kr": "70대 이상 여성직장인구수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_INCOME_AMOUNT",
+    "table_name_kr": "소득금액(직장근로자기준)",
+    "subject": "시설물",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "TOT_INCAMT",
+        "column_name_kr": "총소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "MINCAMT",
+        "column_name_kr": "남성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "GNR20_MINCAMT",
+        "column_name_kr": "20대 남성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "GNR30_MINCAMT",
+        "column_name_kr": "30대 남성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "GNR40_MINCAMT",
+        "column_name_kr": "40대 남성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "GNR50_MINCAMT",
+        "column_name_kr": "50대 남성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "GNR60_MINCAMT",
+        "column_name_kr": "60대 남성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "GNR_OVER_70_MINCAMT",
+        "column_name_kr": "70대 이상 남성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "FINCAMT",
+        "column_name_kr": "여성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "GNR20_FINCAMT",
+        "column_name_kr": "20대 여성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "GNR30_FINCAMT",
+        "column_name_kr": "30대 여성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "GNR40_FINCAMT",
+        "column_name_kr": "40대 여성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "GNR50_FINCAMT",
+        "column_name_kr": "50대 여성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "GNR60_FINCAMT",
+        "column_name_kr": "60대 여성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "GNR_OVER_70_FINCAMT",
+        "column_name_kr": "70대 이상 여성소득금액",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_BSNES_INFO",
+    "table_name_kr": "연령별/성별 사업체정보(사업체수, 종업원수)",
+    "subject": "시설물",
+    "remark": "화면에 사용 안되고 있고 갱신 안되고 있는 테이블",
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "STDR_YMD",
+        "column_name_kr": "기준년월일",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "BSNES_CO",
+        "column_name_kr": "사업체수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "TOT_EMPLY_CO",
+        "column_name_kr": "총종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "MEMPLY_CO",
+        "column_name_kr": "남성성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "GNR20_MEMPLY_CO",
+        "column_name_kr": "20대 남성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "GNR30_MEMPLY_CO",
+        "column_name_kr": "30대 남성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "GNR40_MEMPLY_CO",
+        "column_name_kr": "40대 남성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "GNR50_MEMPLY_CO",
+        "column_name_kr": "50대 남성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "GNR60_MEMPLY_CO",
+        "column_name_kr": "60대 남성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "GNR_OVER_70_MEMPLY_CO",
+        "column_name_kr": "70대 이상 남성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "FEMPLY_CO",
+        "column_name_kr": "여성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "GNR20_FEMPLY_CO",
+        "column_name_kr": "20대 여성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "GNR30_FEMPLY_CO",
+        "column_name_kr": "30대 여성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "GNR40_FEMPLY_CO",
+        "column_name_kr": "40대 여성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 18,
+        "column_name": "GNR50_FEMPLY_CO",
+        "column_name_kr": "50대 여성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 19,
+        "column_name": "GNR60_FEMPLY_CO",
+        "column_name_kr": "60대 여성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 20,
+        "column_name": "GNR_OVER_70_FEMPLY_CO",
+        "column_name_kr": "70대 이상 여성종업원수",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_USER",
+    "table_name_kr": "계정 정보",
+    "subject": "시설물",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "USER_NO",
+        "column_name_kr": "유저 고유 ID",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "INT8",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "USER_ID",
+        "column_name_kr": "유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 30,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "USER_NM",
+        "column_name_kr": "유저 계정명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "USER_PASSWORD",
+        "column_name_kr": "유저 비밀번호",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 600,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "USER_EMAIL",
+        "column_name_kr": "유저 이메일",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "USER_MOBILE",
+        "column_name_kr": "유저 전화번호",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "USER_TEL",
+        "column_name_kr": "유저 번호",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "USE_FLAG",
+        "column_name_kr": "사용 여부",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "LAST_LOGIN_DT",
+        "column_name_kr": "마지막 로그인 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "REG_USER_ID",
+        "column_name_kr": "등록 유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "REG_USER_IP",
+        "column_name_kr": "등록 유저 아이피",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 32,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "REG_DT",
+        "column_name_kr": "등록 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "UPD_USER_ID",
+        "column_name_kr": "업데이트 유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "UPD_USER_IP",
+        "column_name_kr": "업데이트 유저 아이피",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 32,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "UPD_DT",
+        "column_name_kr": "업데이트 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "SIDO_CD",
+        "column_name_kr": "시도코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 17,
+        "column_name": "CTY_CD",
+        "column_name_kr": "시군구 코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 18,
+        "column_name": "ADMI_CD",
+        "column_name_kr": "행정동 코드",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_USER_ROLE",
+    "table_name_kr": "계정 권한",
+    "subject": "시설물",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "USER_NO",
+        "column_name_kr": "유저 고유 ID",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "INT8",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ROLE_NO",
+        "column_name_kr": "사용자 권한 구분 번호",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "INT8",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "REG_USER_ID",
+        "column_name_kr": "등록 유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "REG_USER_IP",
+        "column_name_kr": "등록 유저 아이피",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 32,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "REG_DT",
+        "column_name_kr": "등록 시간",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "UPD_USER_ID",
+        "column_name_kr": "업데이트 유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "UPD_USER_IP",
+        "column_name_kr": "업데이트 유저 아이피",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 32,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "UPD_DT",
+        "column_name_kr": "업데이트 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_USER_SIGNIN_LOG",
+    "table_name_kr": "사용자 로그인 로그",
+    "subject": "시설물",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "USER_NO",
+        "column_name_kr": "유저 고유 ID",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "INT8",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "USER_ID",
+        "column_name_kr": "유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 30,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "USER_TOKEN",
+        "column_name_kr": "유저 토큰",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1000,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "CONNECT_TIME",
+        "column_name_kr": "접속 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "LIMIT_TIME",
+        "column_name_kr": "접속 최대 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "INT8",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_ROLE",
+    "table_name_kr": "권한 정보",
+    "subject": "시설물",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "ROLE_NO",
+        "column_name_kr": "사용자 권한 구분 번호",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "INT8",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "ROLE_NM",
+        "column_name_kr": "사용자 권한 명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "ROLE_ID",
+        "column_name_kr": "권한 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "ROLE_DESC",
+        "column_name_kr": "권한 설명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 500,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "USE_FLAG",
+        "column_name_kr": "사용 여부",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "REG_USER_ID",
+        "column_name_kr": "등록 유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "REG_USER_IP",
+        "column_name_kr": "등록 유저 아이피",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 32,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "REG_DT",
+        "column_name_kr": "등록 시간",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "UPD_USER_ID",
+        "column_name_kr": "업데이트 유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "UPD_USER_IP",
+        "column_name_kr": "업데이트 유저 아이피",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 32,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "UPD_DT",
+        "column_name_kr": "업데이트 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_MENU",
+    "table_name_kr": "메뉴 정보",
+    "subject": "시설물",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "MENU_NO",
+        "column_name_kr": "메뉴 구분 번호",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "INT8",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "MENU_NM",
+        "column_name_kr": "메뉴 명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "MENU_ID",
+        "column_name_kr": "메뉴 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "SORT_ORDER",
+        "column_name_kr": "정렬 순서",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "INT4",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "PARENT_MENU_ID",
+        "column_name_kr": "부모 메뉴 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "MENU_VISIBLE_LOCAL",
+        "column_name_kr": "지역별 메뉴 노출 여부",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "MENU_TYPE",
+        "column_name_kr": "메뉴 타입",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "MENU_URL",
+        "column_name_kr": "메뉴 URL",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 2000,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "MENU_DESC",
+        "column_name_kr": "메뉴 설명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 500,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "USE_FLAG",
+        "column_name_kr": "사용 여부",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "REG_USER_ID",
+        "column_name_kr": "등록 유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "REG_USER_IP",
+        "column_name_kr": "등록 유저 아이피",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 32,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 13,
+        "column_name": "REG_DT",
+        "column_name_kr": "등록 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 14,
+        "column_name": "UPD_USER_ID",
+        "column_name_kr": "업데이트 유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 15,
+        "column_name": "UPD_USER_IP",
+        "column_name_kr": "업데이트 유저 아이피",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 32,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 16,
+        "column_name": "UPD_DT",
+        "column_name_kr": "업데이트 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_FILE",
+    "table_name_kr": "파일 정보",
+    "subject": "시설물",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "FILE_ID",
+        "column_name_kr": "파일ID",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "스퀀스"
+      },
+      {
+        "order": 2,
+        "column_name": "REPRT_ID",
+        "column_name_kr": "문서ID",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "FILE_NM",
+        "column_name_kr": "파일명",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "CHANGE_FILE_NM",
+        "column_name_kr": "저장한 피일명",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "FILE_SIZE",
+        "column_name_kr": "파일 사이즈",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "FILE_EXTSN",
+        "column_name_kr": "파일 확장자",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 4,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "FILE_TYPE",
+        "column_name_kr": "파일 구분",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "DEL_YN",
+        "column_name_kr": "파일 삭제 여부",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "REGIST_ID",
+        "column_name_kr": "등록자",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "REGIST_DT",
+        "column_name_kr": "등록일시",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "UPDT_ID",
+        "column_name_kr": "수정자",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "UPDT_DT",
+        "column_name_kr": "수정일시",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_ANALYSIS_REPORT_SCHEDULE",
+    "table_name_kr": "분석 리포트 스케쥴",
+    "subject": "시설물",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "EVENT_ID",
+        "column_name_kr": "행사ID",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "스퀀스"
+      },
+      {
+        "order": 2,
+        "column_name": "REPRT_ID",
+        "column_name_kr": "문서ID",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "EVENT_SJ",
+        "column_name_kr": "행사 제목",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 50,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "EVENT_SUBTITL",
+        "column_name_kr": "행사 소제목",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 30,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "EVENT_TMZON",
+        "column_name_kr": "행사 시간대",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "EVNET_SN",
+        "column_name_kr": "행사 순번",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "REGIST_ID",
+        "column_name_kr": "등록자",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "REGIST_DT",
+        "column_name_kr": "등록일시",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "UPDT_ID",
+        "column_name_kr": "수정자",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "UPDT_DT",
+        "column_name_kr": "수정일시",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_ANALYSIS_REPORT_URL",
+    "table_name_kr": "분석 리포트 URL",
+    "subject": "시설물",
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "ANALS_ID",
+        "column_name_kr": "문서ID",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": "스퀀스"
+      },
+      {
+        "order": 2,
+        "column_name": "REPRT_ID",
+        "column_name_kr": "보고서ID",
+        "is_pk": 2,
+        "nullable": "NOT NULL",
+        "data_type": "NUMERIC",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "REPRT_NM",
+        "column_name_kr": "보고서명",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "REPRT_TY",
+        "column_name_kr": "보고서 타입",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 3,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "REPRT_URL",
+        "column_name_kr": "보고서 URL",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 100,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "REGIST_ID",
+        "column_name_kr": "등록자",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "REGIST_DT",
+        "column_name_kr": "등록일시",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "UPDT_ID",
+        "column_name_kr": "수정자",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 10,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "UPDT_DT",
+        "column_name_kr": "수정일시",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_FCLTY_LCLAS",
+    "table_name_kr": "",
+    "subject": null,
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "FCLTY_LCLAS_CD",
+        "column_name_kr": "시설대분류코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "FCLTY_LCLAS_CD_NM",
+        "column_name_kr": "시설대분류코드명",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_FCLTY_SCLAS",
+    "table_name_kr": "",
+    "subject": null,
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "FCLTY_SCLAS_CD",
+        "column_name_kr": "시설소분류코드",
+        "is_pk": 1,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "FCLTY_SCLAS_CD_NM",
+        "column_name_kr": "시설소분류코드명",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 40,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "FCLTY_LCLAS_CD",
+        "column_name_kr": "시설대분류코드",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "VARCHAR",
+        "length": 8,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  },
+  {
+    "table_name": "TB_ROLE_MENU",
+    "table_name_kr": "",
+    "subject": null,
+    "remark": null,
+    "columns": [
+      {
+        "order": 1,
+        "column_name": "ROLE_NO",
+        "column_name_kr": "사용자 권한 구분 번호",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "INT8",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 2,
+        "column_name": "MENU_NO",
+        "column_name_kr": "메뉴 구분 번호",
+        "is_pk": null,
+        "nullable": "NOT NULL",
+        "data_type": "INT8",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 3,
+        "column_name": "USE_FLAG",
+        "column_name_kr": "사용 여부",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 4,
+        "column_name": "CREATE_FLAG",
+        "column_name_kr": "",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 5,
+        "column_name": "MODIFY_FLAG",
+        "column_name_kr": "",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 6,
+        "column_name": "DELETE_FLAG",
+        "column_name_kr": "삭제 여부",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 1,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 7,
+        "column_name": "REG_USER_ID",
+        "column_name_kr": "등록 유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 8,
+        "column_name": "REG_USER_IP",
+        "column_name_kr": "등록 유저 아이피",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 32,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 9,
+        "column_name": "REG_DT",
+        "column_name_kr": "등록 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 10,
+        "column_name": "UPD_USER_ID",
+        "column_name_kr": "업데이트 유저 아이디",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 20,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 11,
+        "column_name": "UPD_USER_IP",
+        "column_name_kr": "업데이트 유저 아이피",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "VARCHAR",
+        "length": 32,
+        "scale": null,
+        "remark": null
+      },
+      {
+        "order": 12,
+        "column_name": "UPD_DT",
+        "column_name_kr": "업데이트 시간",
+        "is_pk": null,
+        "nullable": null,
+        "data_type": "TIMESTAMP",
+        "length": null,
+        "scale": null,
+        "remark": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+# 환경변수 (DB 비밀번호, API 키 등)
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# PyCharm
+.idea/
+
+# Claude Code 내부 파일
+.claude/
+
+# Poetry
+# poetry.lock은 보통 포함시키는 것이 권장됨
+
+# 백업 파일
+*_backup.py
