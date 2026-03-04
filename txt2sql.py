@@ -13,6 +13,9 @@
 """
 
 import os
+import logging
+import logging.handlers
+import queue
 from sqlalchemy import create_engine, inspect, text
 from langchain_google_genai import ChatGoogleGenerativeAI
 import pandas as pd
@@ -22,6 +25,20 @@ import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 load_dotenv()
+
+_log_formatter = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+_file_handler = logging.FileHandler("app.log", encoding="utf-8")
+_file_handler.setFormatter(_log_formatter)
+_stream_handler = logging.StreamHandler()
+_stream_handler.setFormatter(_log_formatter)
+
+_log_queue: queue.Queue = queue.Queue()
+_queue_handler = logging.handlers.QueueHandler(_log_queue)
+_queue_listener = logging.handlers.QueueListener(_log_queue, _file_handler, _stream_handler, respect_handler_level=True)
+_queue_listener.start()
+
+logging.basicConfig(level=logging.INFO, handlers=[_queue_handler])
+logger = logging.getLogger(__name__)
 
 DB_SCHEMA = "regionmonitor"
 
@@ -51,13 +68,13 @@ class ImprovedTextToSQL:
         try:
             self.engine = create_engine(
                 db_uri,
-                connect_args={"options": f"-csearch_path={DB_SCHEMA},public"}
+                connect_args={"options": f"-csearch_path={DB_SCHEMA},public -c statement_timeout=15000"}
             )
             with self.engine.connect() as conn:
                 conn.execute(text("SELECT 1"))
-            print("✅ PostgreSQL 연결 성공!")
+            logger.info("PostgreSQL 연결 성공")
         except Exception as e:
-            print(f"❌ DB 연결 실패: {e}")
+            logger.error("DB 연결 실패: %s", e)
             raise
 
         self.llm = ChatGoogleGenerativeAI(
@@ -67,8 +84,8 @@ class ImprovedTextToSQL:
         )
         self.column_definitions = self._load_column_definitions()
         self.schema_info = self._get_schema_info()
-        print(f"✨ [개선된 버전] LLM이 {len(self.schema_info['details'])}개 테이블 중 직접 선택합니다")
-        print(f"📖 컬럼 정의서: {len(self.column_definitions)}개 테이블\n")
+        logger.info("[개선된 버전] LLM이 %d개 테이블 중 직접 선택합니다", len(self.schema_info['details']))
+        logger.info("컬럼 정의서: %d개 테이블", len(self.column_definitions))
 
     # ──────────────────────────────────────────────
     # 초기화
@@ -80,7 +97,7 @@ class ImprovedTextToSQL:
                 data = json.load(f)
             return {t['table_name'].lower(): t for t in data if 'table_name' in t}
         except Exception as e:
-            print(f"⚠️  컬럼 정의서 로드 실패: {e}")
+            logger.warning("컬럼 정의서 로드 실패: %s", e)
             return {}
 
     def _get_schema_info(self):
@@ -404,11 +421,11 @@ JSON 형식으로만 반환 (다른 텍스트 없이):
             region, year, specific_date, month = None, None, None, None
             intent = "통계_분석"
 
-        print(f"   🔎 추출된 키워드 → 지역: {region}, 연도: {year}, 특정날짜: {specific_date}, 월: {month}")
+        logger.info("추출된 키워드 → 지역: %s, 연도: %s, 특정날짜: %s, 월: %s", region, year, specific_date, month)
 
         if not region and not year and not specific_date:
             if previous_festival_context:
-                print(f"   ♻️  추출 실패 → 이전 축제 컨텍스트 재사용: [{previous_festival_context.get('event_nm')}]")
+                logger.info("추출 실패 → 이전 축제 컨텍스트 재사용: [%s]", previous_festival_context.get('event_nm'))
                 return previous_festival_context
             return None
 
@@ -427,7 +444,7 @@ JSON 형식으로만 반환 (다른 텍스트 없이):
         has_festival_keyword = any(keyword in question for keyword in festival_keywords)
 
         if not has_festival_keyword:
-            print(f"   ℹ️  축제 관련 키워드 없음 → 일반 질문으로 판단")
+            logger.info("축제 관련 키워드 없음 → 일반 질문으로 판단")
             return None
 
         # "수원축제" 같이 [지역명+일반축제어] 조합이면 접미어 제거 후 지역명만 사용
@@ -441,24 +458,30 @@ JSON 형식으로만 반환 (다른 텍스트 없이):
 
         def _build_sql(search_region):
             conds = []
+            params = {}
             if search_region:
                 parts = [p for p in search_region.split() if len(p) >= 2]
                 if not parts:
                     parts = [search_region]
-                clauses = [
-                    f"(event_nm LIKE '%{p}%' OR reprt_nm LIKE '%{p}%' "
-                    f"OR event_plc LIKE '%{p}%' OR cty_nm LIKE '%{p}%' "
-                    f"OR sido_nm LIKE '%{p}%')"
-                    for p in parts
-                ]
+                clauses = []
+                for i, p in enumerate(parts):
+                    key = f"kw{i}"
+                    params[key] = f"%{p}%"
+                    clauses.append(
+                        f"(event_nm LIKE :{key} OR reprt_nm LIKE :{key} "
+                        f"OR event_plc LIKE :{key} OR cty_nm LIKE :{key} "
+                        f"OR sido_nm LIKE :{key})"
+                    )
                 conds.append("(" + " OR ".join(clauses) + ")")
             if specific_date:
-                conds.append(f"event_bgnde <= '{specific_date}' AND event_endde >= '{specific_date}'")
+                conds.append("event_bgnde <= :sd AND event_endde >= :sd")
+                params["sd"] = specific_date
             elif year:
-                conds.append(f"event_bgnde LIKE '{year}%'")
+                conds.append("event_bgnde LIKE :yr")
+                params["yr"] = f"{year}%"
             if not conds:
-                return None
-            return f"""
+                return None, {}
+            sql = f"""
 SELECT reprt_id, event_nm, region_cd, admi_cd,
        sido_nm, cty_nm, event_bgnde, event_endde, event_plc,
        event_site, evnet_dc, event_auspc
@@ -466,16 +489,17 @@ FROM "{DB_SCHEMA}"."tb_analysis_report"
 WHERE {" AND ".join(conds)}
 ORDER BY event_bgnde DESC, reprt_id DESC
 """
+            return sql, params
 
-        sql = _build_sql(region)
+        sql, params = _build_sql(region)
         if not sql:
             return None
 
-        print(f"   📋 실행 SQL: {sql.strip()}")
-        result = self.execute_query(sql)
+        logger.debug("실행 SQL: %s", sql.strip())
+        result = self.execute_query(sql, params)
 
         if not result['success']:
-            print(f"   ⚠️  SQL 오류: {result['error']}")
+            logger.warning("SQL 오류: %s", result['error'])
             return None
 
         # 0행이고 region에 축제 접미어가 있으면 접미어 제거 후 재시도
@@ -483,35 +507,35 @@ ORDER BY event_bgnde DESC, reprt_id DESC
         if result['rows'] == 0 and region:
             stripped = _strip_festival_suffix(region)
             if stripped:
-                print(f"   🔄 0행 → '{region}' 접미어 제거 후 '{stripped}'로 재시도")
-                sql2 = _build_sql(stripped)
+                logger.info("0행 → '%s' 접미어 제거 후 '%s'로 재시도", region, stripped)
+                sql2, params2 = _build_sql(stripped)
                 if sql2:
-                    result2 = self.execute_query(sql2)
+                    result2 = self.execute_query(sql2, params2)
                     if result2['success'] and result2['rows'] > 0:
                         region = stripped
                         result = result2
                         sql = sql2
-                        print(f"   📋 재시도 SQL: {sql2.strip()}")
+                        logger.debug("재시도 SQL: %s", sql2.strip())
 
         if result['rows'] == 0:
-            print("   ⚠️  조건에 맞는 축제가 없습니다.")
+            logger.warning("조건에 맞는 축제가 없습니다.")
             # 연도 검색인데 결과 없으면 빈 결과를 담은 컨텍스트 반환 (fallback 방지)
             if year and not region and not specific_date:
                 return {'_empty': True, 'year': year, 'all_festivals': result['data'], '_intent': intent}
             return None
 
         if result['rows'] > 1:
-            print(f"\n   ℹ️  {result['rows']}개 축제 검색됨 (전체 목록):")
-            print(result['data'][['reprt_id', 'event_nm', 'event_bgnde', 'event_endde']].to_string(index=False))
+            logger.info("%d개 축제 검색됨 (전체 목록):\n%s", result['rows'],
+                        result['data'][['reprt_id', 'event_nm', 'event_bgnde', 'event_endde']].to_string(index=False))
 
             # "최근" 유형 질문은 날짜순 첫 번째 항목 사용
             if any(kw in question for kw in ['최근', '최신', '가장 최근', '마지막', '요즘']):
                 row = result['data'].iloc[0]
-                print(f"\n   → 최신 날짜 기준 선택: [{row['event_nm']}] (event_bgnde={row['event_bgnde']})\n")
+                logger.info("최신 날짜 기준 선택: [%s] (event_bgnde=%s)", row['event_nm'], row['event_bgnde'])
             else:
                 # 이전 축제 힌트를 LLM에게 제공해서 연속 질문 vs 새 질문을 스스로 판단
                 row = self._pick_best_festival(question, result['data'], previous_festival_context)
-                print(f"\n   → LLM 선택: [{row['event_nm']}] (reprt_id={int(row['reprt_id'])})\n")
+                logger.info("LLM 선택: [%s] (reprt_id=%d)", row['event_nm'], int(row['reprt_id']))
         else:
             row = result['data'].iloc[0]
 
@@ -525,9 +549,8 @@ ORDER BY event_bgnde DESC, reprt_id DESC
         ctx['_intent'] = intent
 
         date_info = f"특정 날짜: {specific_date}" if specific_date else f"기간: {ctx['event_bgnde']}~{ctx['event_endde']}"
-        print(f"   ✅ 축제: [{ctx['event_nm']}] | "
-              f"{date_info} | "
-              f"REGION_CD: {ctx['region_cd']} | ADMI_CD: {ctx['admi_cd']}")
+        logger.info("축제: [%s] | %s | REGION_CD: %s | ADMI_CD: %s",
+                    ctx['event_nm'], date_info, ctx['region_cd'], ctx['admi_cd'])
         return ctx
 
     def _pick_best_festival(self, question: str, df, previous_festival_context: dict | None = None) -> dict:
@@ -644,9 +667,9 @@ reprt_id 숫자만 반환 (다른 텍스트 없이):"""
         ]
 
         if valid:
-            print(f"   ✅ LLM이 선택한 테이블: {', '.join(valid)}")
+            logger.info("LLM이 선택한 테이블: %s", ', '.join(valid))
         else:
-            print("   ⚠️  LLM이 테이블 선택 실패 → 재시도")
+            logger.warning("LLM이 테이블 선택 실패 → 재시도")
             # 재시도 로직 추가 가능
 
         return valid
@@ -756,7 +779,7 @@ SQL:"""
         sql_upper = sql.upper()
         for keyword in dangerous_keywords:
             if keyword in sql_upper:
-                print(f"   ❌ 보안: 위험한 키워드 '{keyword}' 감지")
+                logger.error("보안: 위험한 키워드 '%s' 감지", keyword)
                 return False
 
         # 2. WHERE 절 필수 검증 (region_cd 또는 admi_cd)
@@ -768,20 +791,20 @@ SQL:"""
             required_val = festival_ctx.get('region_cd')
 
         if required_key not in sql.lower():
-            print(f"   ❌ 보안: WHERE {required_key} 조건 누락")
+            logger.error("보안: WHERE %s 조건 누락", required_key)
             return False
 
         # 3. 테이블명 검증
         if f'"{DB_SCHEMA}"."{table}"' not in sql and f'{DB_SCHEMA}.{table}' not in sql:
-            print(f"   ❌ 보안: 잘못된 테이블 참조")
+            logger.error("보안: 잘못된 테이블 참조")
             return False
 
         return True
 
-    def execute_query(self, sql: str) -> dict:
+    def execute_query(self, sql: str, params: dict | None = None) -> dict:
         try:
             with self.engine.connect() as conn:
-                df = pd.read_sql(text(sql), conn)
+                df = pd.read_sql(text(sql), conn, params=params or {})
             return {'success': True, 'data': df, 'rows': len(df), 'columns': list(df.columns)}
         except Exception as e:
             return {'success': False, 'error': str(e), 'error_type': type(e).__name__}
@@ -818,35 +841,35 @@ SQL:"""
     def _process_single_table(self, question: str, table: str,
                               festival_ctx: dict, show_sql: bool) -> dict | None:
         """테이블 1개에 대한 SQL 생성 → 검증 → 실행 (병렬 실행용)"""
-        print(f"\n   📋 {table} ({self._get_table_kr(table)})")
+        logger.info("%s (%s)", table, self._get_table_kr(table))
         sql = self._generate_sql_per_table(question, table, festival_ctx)
 
         if not self._validate_sql(sql, table, festival_ctx):
-            print(f"   ❌ 보안 검증 실패 → 스킵")
+            logger.warning("보안 검증 실패 → 스킵 (%s)", table)
             return None
 
         if show_sql:
-            print(f"   SQL: {sql}")
+            logger.debug("SQL: %s", sql)
 
         result = self.execute_query(sql)
         if not result['success']:
-            print(f"   ❌ 오류: {result['error']} → 자동 수정 시도...")
+            logger.warning("오류: %s → 자동 수정 시도... (%s)", result['error'], table)
             fixed = self._fix_sql(sql, result['error'], table)
 
             if not self._validate_sql(fixed, table, festival_ctx):
-                print(f"   ❌ 수정된 SQL도 보안 검증 실패 → 스킵")
+                logger.warning("수정된 SQL도 보안 검증 실패 → 스킵 (%s)", table)
                 return None
 
             result = self.execute_query(fixed)
             sql = fixed
 
         if result['success']:
-            print(f"   ✅ {result['rows']}행 조회 | 컬럼: {', '.join(result['columns'])}")
-            if result['rows'] > 0:
-                print(result['data'].to_string())
+            logger.info("%d행 조회 | 컬럼: %s", result['rows'], ', '.join(result['columns']))
+            if result['rows'] > 0 and logger.isEnabledFor(logging.DEBUG):
+                logger.debug(result['data'].to_string())
             return {'table': table, 'sql': sql, 'data': result['data'], 'rows': result['rows']}
         else:
-            print(f"   ❌ 최종 실패: {result['error']}")
+            logger.error("최종 실패: %s (%s)", result['error'], table)
             return None
 
     # ──────────────────────────────────────────────
@@ -1042,7 +1065,7 @@ SQL:"""
 
             return None
         except Exception as e:
-            print(f"   ⚠️ 차트 데이터 생성 실패 ({table}): {e}")
+            logger.warning("차트 데이터 생성 실패 (%s): %s", table, e)
             return None
 
     def _make_chart_data(self, query_results: list[dict]) -> list[dict]:
@@ -1211,19 +1234,15 @@ SQL:"""
     def query(self, question: str, show_sql: bool = True,
               conversation_history: list[dict] | None = None,
               previous_festival_context: dict | None = None) -> dict | None:
-        print(f"\n{'=' * 80}")
-        print(f"❓ 질문: {question}")
-        print('=' * 80)
+        logger.info("질문: %s", question)
 
         # ── STEP 1: 축제 컨텍스트 ──
-        print("\n🔍 [1단계] TB_ANALYSIS_REPORT 축제 탐색...")
+        logger.info("[1단계] TB_ANALYSIS_REPORT 축제 탐색...")
         festival_ctx = self._extract_festival_context(question, conversation_history, previous_festival_context)
         if not festival_ctx:
-            print("   ℹ️  축제 컨텍스트 없음 → Gemini 일반 답변 모드")
-            print("\n💬 [Fallback] Gemini가 일반 답변을 생성합니다...")
+            logger.info("축제 컨텍스트 없음 → Gemini 일반 답변 모드")
             fallback_answer = self._generate_fallback_answer(question)
-            print(f"\n📝 답변:\n{fallback_answer}")
-            print('\n' + '=' * 80)
+            logger.info("답변:\n%s", fallback_answer)
             return {
                 'question': question,
                 'intent': 'fallback',
@@ -1234,8 +1253,7 @@ SQL:"""
         if festival_ctx.get('_empty'):
             year = festival_ctx['year']
             answer = f"{year}년에 등록된 축제 데이터가 없습니다.\n\n데이터가 있는 연도의 축제를 조회하시려면 연도를 지정해주세요.\n예: \"2025년 수원 축제 갯수를 알려줘\""
-            print(f"\n📝 답변:\n{answer}")
-            print('\n' + '=' * 80)
+            logger.info("답변:\n%s", answer)
             return {
                 'question': question,
                 'intent': '축제_목록',
@@ -1244,17 +1262,16 @@ SQL:"""
 
         # ── 질문 의도 분류 (_extract_festival_context에서 통합 추출) ──
         intent = festival_ctx.get('_intent', '통계_분석')
-        print(f"\n🎯 질문 의도 (컨텍스트 추출): {intent}")
+        logger.info("질문 의도 (컨텍스트 추출): %s", intent)
 
         if intent == "축제_목록":
-            print("\n📋 [축제 목록 제공 모드]")
+            logger.info("[축제 목록 제공 모드]")
             answer = self._answer_festival_list(
                 festival_ctx['all_festivals'], question,
                 search_year=festival_ctx.get('_year'),
                 search_region=festival_ctx.get('_region'),
             )
-            print(f"\n📝 답변:\n{answer}")
-            print('\n' + '=' * 80)
+            logger.info("답변:\n%s", answer)
             return {
                 'question': question,
                 'festival_count': len(festival_ctx['all_festivals']),
@@ -1263,10 +1280,9 @@ SQL:"""
             }
 
         if intent == "축제_정보":
-            print("\n📋 [축제 정보 제공 모드]")
+            logger.info("[축제 정보 제공 모드]")
             answer = self._answer_festival_info(festival_ctx)
-            print(f"\n📝 답변:\n{answer}")
-            print('\n' + '=' * 80)
+            logger.info("답변:\n%s", answer)
             return {
                 'question': question,
                 'festival_context': festival_ctx,
@@ -1275,14 +1291,12 @@ SQL:"""
             }
 
         # ── STEP 2: 질문 분해 → 테이블 목록 (LLM이 선택) ──
-        print("\n🗂  [2단계] LLM이 필요 테이블 선택 중...")
+        logger.info("[2단계] LLM이 필요 테이블 선택 중...")
         tables = self._decompose_question(question)
         if not tables:
-            print("   ❌ LLM이 테이블을 선택하지 못했습니다.")
-            print("\n💬 [Fallback] Gemini가 일반 답변을 생성합니다...")
+            logger.error("LLM이 테이블을 선택하지 못했습니다.")
             fallback_answer = self._generate_fallback_answer(question)
-            print(f"\n📝 답변:\n{fallback_answer}")
-            print('\n' + '=' * 80)
+            logger.info("답변:\n%s", fallback_answer)
             return {
                 'question': question,
                 'intent': 'fallback',
@@ -1290,7 +1304,7 @@ SQL:"""
             }
 
         # ── STEP 3: 테이블별 SQL 생성 & 실행 (병렬) ──
-        print(f"\n🔄 [3단계] 테이블별 SQL 생성 & 실행 ({len(tables)}개) - 병렬 처리...")
+        logger.info("[3단계] 테이블별 SQL 생성 & 실행 (%d개) - 병렬 처리...", len(tables))
         query_results = []
         with ThreadPoolExecutor(max_workers=min(len(tables), 4)) as executor:
             futures = {
@@ -1303,11 +1317,9 @@ SQL:"""
                     query_results.append(result)
 
         if not query_results:
-            print("\n❌ 모든 쿼리 실패")
-            print("\n💬 [Fallback] Gemini가 일반 답변을 생성합니다...")
+            logger.error("모든 쿼리 실패")
             fallback_answer = self._generate_fallback_answer(question)
-            print(f"\n📝 답변:\n{fallback_answer}")
-            print('\n' + '=' * 80)
+            logger.info("답변:\n%s", fallback_answer)
             return {
                 'question': question,
                 'intent': 'fallback',
@@ -1316,10 +1328,9 @@ SQL:"""
             }
 
         # ── STEP 4: 통합 답변 생성 ──
-        print("\n💬 [4단계] 통합 자연어 답변 생성...")
+        logger.info("[4단계] 통합 자연어 답변 생성...")
         answer = self._generate_combined_answer(question, query_results, festival_ctx)
-        print(f"\n📝 답변:\n{answer}")
-        print('\n' + '=' * 80)
+        logger.info("답변:\n%s", answer)
 
         return {
             'question': question,
@@ -1338,9 +1349,7 @@ SQL:"""
         query()와 동일한 흐름이지만 최종 답변을 SSE 형식으로 스트리밍.
         yields: str (SSE 포맷)
         """
-        print(f"\n{'=' * 80}")
-        print(f"❓ [스트리밍] 질문: {question}")
-        print('=' * 80)
+        logger.info("[스트리밍] 질문: %s", question)
 
         festival_ctx = self._extract_festival_context(question, conversation_history, previous_festival_context)
         if not festival_ctx:
@@ -1448,7 +1457,7 @@ SQL:"""
         sql = response.content.strip().replace('```sql', '').replace('```', '').strip()
 
         if show_sql:
-            print(f"\n📝 SQL:\n{sql}")
+            logger.debug("SQL:\n%s", sql)
 
         result = self.execute_query(sql)
         if not result['success']:
@@ -1457,16 +1466,16 @@ SQL:"""
             sql = fixed
 
         if not result['success']:
-            print(f"❌ 실패: {result['error']}")
+            logger.error("실패: %s", result['error'])
             return None
 
-        print(f"✅ {result['rows']}행 조회")
-        if result['rows'] > 0:
-            print(result['data'].head(10).to_string())
+        logger.info("%d행 조회", result['rows'])
+        if result['rows'] > 0 and logger.isEnabledFor(logging.DEBUG):
+            logger.debug(result['data'].head(10).to_string())
 
         answer_prompt = f"질문: {question}\nSQL: {sql}\n결과: {result['data'].to_string()}\n\n한국어로 답변:"
         answer = self.llm.invoke(answer_prompt).content.strip()
-        print(f"\n📝 답변:\n{answer}")
+        logger.info("답변:\n%s", answer)
         return {'question': question, 'sql': sql, 'data': result['data'], 'answer': answer}
 
     # ──────────────────────────────────────────────
