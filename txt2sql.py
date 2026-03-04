@@ -18,6 +18,8 @@ import logging.handlers
 import queue
 from sqlalchemy import create_engine, inspect, text
 from langchain_google_genai import ChatGoogleGenerativeAI
+from google import genai as google_genai
+from google.genai import types as genai_types
 import pandas as pd
 from dotenv import load_dotenv
 import json
@@ -58,6 +60,19 @@ ADMI_CD_TABLES = {
     "tb_bsnes_info",
 }
 
+# 랭킹/비교 질문 감지 키워드
+_RANKING_KEYWORDS = [
+    '가장 많은', '가장 높은', '가장 적은', '가장 낮은',
+    '최다', '최고', '최저', '1등', '순위', '랭킹',
+    '많은 순', '높은 순', '낮은 순', '상위',
+]
+
+# 랭킹 메트릭별 테이블/컬럼 매핑
+_RANKING_METRICS = {
+    'visitor': ('tb_nation_visit_popltn', 'region_cd', 'tot_vipop', '방문객수', '명'),
+    'revenue': ('tb_nation_selng',        'region_cd', 'salamt',    '매출액',   '원'),
+}
+
 
 class ImprovedTextToSQL:
     def __init__(self):
@@ -78,10 +93,11 @@ class ImprovedTextToSQL:
             raise
 
         self.llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash-lite-preview-09-2025",
+            model="gemini-2.5-flash",
             temperature=0,
             google_api_key=os.getenv("GOOGLE_API_KEY")
         )
+        self.search_client = google_genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
         self.column_definitions = self._load_column_definitions()
         self.schema_info = self._get_schema_info()
         logger.info("[개선된 버전] LLM이 %d개 테이블 중 직접 선택합니다", len(self.schema_info['details']))
@@ -303,6 +319,34 @@ class ImprovedTextToSQL:
         cond_str = " · ".join(conditions)
         header = f"### {cond_str + ' ' if cond_str else ''}축제 목록 ({total_count}개)\n\n"
 
+        # 인트로 멘트 구성
+        region_str = search_region if search_region else "해당 지역"
+        year_str = f"{search_year}년 " if search_year else ""
+
+        # 가장 최근 축제 찾기
+        try:
+            latest_row = festivals_df.loc[festivals_df['event_bgnde'].astype(str).idxmax()]
+            latest_name = latest_row.get('event_nm', '')
+            latest_start = datetime.strptime(str(latest_row['event_bgnde']), '%Y%m%d').strftime('%Y년 %m월 %d일')
+            latest_end   = datetime.strptime(str(latest_row['event_endde']), '%Y%m%d').strftime('%m월 %d일')
+            latest_info = f" 가장 최근 축제는 **{latest_start}**에 시작한 **{latest_name}**입니다."
+        except Exception:
+            latest_info = ""
+
+        # 연도 범위
+        years = sorted(set(str(r['event_bgnde'])[:4] for _, r in festivals_df.iterrows()), reverse=True)
+        if len(years) >= 2:
+            year_range = f"{years[-1]}년부터 {years[0]}년까지 "
+        elif len(years) == 1:
+            year_range = f"{years[0]}년 "
+        else:
+            year_range = ""
+
+        intro = (
+            f"{region_str}에서 {year_range}진행된 {year_str}축제를 총 **{total_count}개** 찾았습니다."
+            f"{latest_info}\n\n"
+        )
+
         # 연도별 그룹화
         festivals_by_year: dict[str, list] = {}
         for _, row in festivals_df.iterrows():
@@ -331,7 +375,87 @@ class ImprovedTextToSQL:
             body += "\n"
 
         footer = "\n> 특정 축제의 상세 정보나 통계가 필요하면 축제명을 말씀해주세요."
-        return header + body + footer
+        return intro + header + body + footer
+
+    def _answer_festival_ranking(self, all_festivals_df, question: str,
+                                  search_year: str = None,
+                                  search_region: str = None) -> dict:
+        """
+        여러 축제를 JOIN 쿼리로 한 번에 비교하여 순위 답변 생성.
+        {'answer': str, 'sql': str} 반환
+        """
+        from datetime import datetime
+
+        # 메트릭 감지 (매출 vs 방문객)
+        is_revenue = any(kw in question for kw in ['매출', '소비', '판매', '결제', '거래', '소비금액'])
+        metric_key = 'revenue' if is_revenue else 'visitor'
+        stat_table, join_col, stat_col, metric_label, unit = _RANKING_METRICS[metric_key]
+
+        # 오름차순/내림차순 감지
+        is_asc = any(kw in question for kw in ['가장 적은', '가장 낮은', '최저', '낮은 순', '적은 순'])
+        order = 'ASC' if is_asc else 'DESC'
+
+        reprt_ids = all_festivals_df['reprt_id'].astype(int).tolist()
+        ids_str = ', '.join(str(i) for i in reprt_ids)
+
+        sql = f"""
+SELECT
+    r.reprt_id,
+    r.event_nm,
+    r.event_bgnde,
+    r.event_endde,
+    SUM(v.{stat_col}) AS total_value
+FROM "{DB_SCHEMA}"."tb_analysis_report" r
+JOIN "{DB_SCHEMA}"."{stat_table}" v
+    ON v.{join_col} = r.{join_col}
+   AND v.stdr_ymd::text BETWEEN r.event_bgnde::text AND r.event_endde::text
+WHERE r.reprt_id IN ({ids_str})
+GROUP BY r.reprt_id, r.event_nm, r.event_bgnde, r.event_endde
+HAVING SUM(v.{stat_col}) IS NOT NULL AND SUM(v.{stat_col}) > 0
+ORDER BY total_value {order}
+""".strip()
+
+        logger.info("[랭킹 쿼리] %s", sql)
+        result = self.execute_query(sql)
+
+        if not result['success']:
+            logger.error("랭킹 쿼리 실패: %s", result['error'])
+            return {'answer': f"순위 데이터를 조회하는 중 오류가 발생했습니다: {result['error']}", 'sql': sql}
+
+        if result['rows'] == 0:
+            return {'answer': "조건에 맞는 통계 데이터가 없습니다.", 'sql': sql}
+
+        df = result['data']
+
+        # 인트로 멘트 구성
+        region_str = search_region or "해당 지역"
+        year_str = f"{search_year}년 " if search_year else ""
+        top_row = df.iloc[0]
+        top_name = top_row['event_nm']
+        top_value = int(top_row['total_value'])
+        direction = "가장 적은" if is_asc else "가장 많은"
+
+        intro = (
+            f"{region_str}에서 {year_str}진행된 축제 중 **{metric_label}** 기준으로 순위를 비교했습니다.\n"
+            f"{direction} 축제는 **{top_name}**으로 총 **{top_value:,}{unit}**을 기록했습니다.\n\n"
+        )
+
+        # 마크다운 순위표
+        rank_header = f"### {year_str}{region_str} 축제 {metric_label} 순위\n\n"
+        table = f"| 순위 | 축제명 | 기간 | {metric_label}({unit}) |\n"
+        table += f"|-----|-------|------|------|\n"
+        for rank, (_, row) in enumerate(df.iterrows(), 1):
+            value = int(row['total_value'])
+            try:
+                start = datetime.strptime(str(row['event_bgnde']), '%Y%m%d').strftime('%m/%d')
+                end   = datetime.strptime(str(row['event_endde']), '%Y%m%d').strftime('%m/%d')
+                period = f"{start}~{end}" if start != end else start
+            except Exception:
+                period = f"{row['event_bgnde']}~{row['event_endde']}"
+            table += f"| {rank} | {row['event_nm']} | {period} | {value:,} |\n"
+
+        answer = intro + rank_header + table
+        return {'answer': answer, 'sql': sql}
 
     def _extract_festival_context(self, question: str,
                                    conversation_history: list[dict] | None = None,
@@ -524,6 +648,21 @@ ORDER BY event_bgnde DESC, reprt_id DESC
                 return {'_empty': True, 'year': year, 'all_festivals': result['data'], '_intent': intent}
             return None
 
+        # 랭킹/비교 질문이고 통계 의도인 경우, 단일 축제 선택 없이 전체 비교 모드로 전환
+        is_ranking = (intent == '통계_분석'
+                      and result['rows'] > 1
+                      and any(kw in question for kw in _RANKING_KEYWORDS))
+
+        if is_ranking:
+            logger.info("랭킹 질문 감지 (%d개 축제 비교 모드)", result['rows'])
+            return {
+                'all_festivals': result['data'],
+                '_intent': intent,
+                '_ranking': True,
+                '_year': year,
+                '_region': region,
+            }
+
         if result['rows'] > 1:
             logger.info("%d개 축제 검색됨 (전체 목록):\n%s", result['rows'],
                         result['data'][['reprt_id', 'event_nm', 'event_bgnde', 'event_endde']].to_string(index=False))
@@ -545,8 +684,11 @@ ORDER BY event_bgnde DESC, reprt_id DESC
             'event_site', 'evnet_dc', 'event_auspc'
         ]}
         ctx['specific_date'] = specific_date
-        ctx['all_festivals'] = result['data']  # ✅ 전체 축제 목록도 저장
+        ctx['all_festivals'] = result['data']
         ctx['_intent'] = intent
+        ctx['_ranking'] = False
+        ctx['_year'] = year
+        ctx['_region'] = region
 
         date_info = f"특정 날짜: {specific_date}" if specific_date else f"기간: {ctx['event_bgnde']}~{ctx['event_endde']}"
         logger.info("축제: [%s] | %s | REGION_CD: %s | ADMI_CD: %s",
@@ -1112,17 +1254,47 @@ SQL:"""
                 yield chunk.content
 
     # ──────────────────────────────────────────────
-    # Fallback: DB에 없는 질문은 Gemini가 일반 답변
+    # Fallback: DB에 없는 질문은 Google Search Grounding으로 답변
     # ──────────────────────────────────────────────
 
     def _generate_fallback_answer(self, question: str) -> str:
-        """
-        ✅ 개선: 범용 답변 가능 + 안전장치
+        """Google Search Grounding을 사용한 웹 검색 기반 답변"""
+        try:
+            system_instruction = (
+                "당신은 축제 데이터 분석을 도와주는 친절한 AI 챗봇입니다. "
+                "축제 데이터베이스에서 답을 찾을 수 없는 질문에 대해 Google 검색을 통해 최신 정보를 제공합니다. "
+                "친근하고 자연스럽게 대화하며 적절한 이모지를 사용하세요. "
+                "축제 데이터 분석이 주 업무임을 자연스럽게 언급하세요."
+            )
+            response = self.search_client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=f"{system_instruction}\n\n질문: {question}",
+                config=genai_types.GenerateContentConfig(
+                    tools=[genai_types.Tool(google_search=genai_types.GoogleSearch())],
+                )
+            )
+            answer = response.text.strip()
+            disclaimer = """
 
-        - 일반 상식, 인사 → 답변 O
-        - 실시간 정보, 전문 조언 → 답변 X (거부)
-        - 면책 문구 자동 추가
-        """
+---
+💡 **참고 사항**
+- 위 정보는 Google 검색을 통해 제공된 최신 정보입니다
+- 전문적인 조언(의료/법률/재무)은 전문가와 상담하세요
+- 저는 축제 데이터 분석에 특화된 챗봇입니다
+
+📊 **제가 도울 수 있는 질문 예시:**
+- "수원축제 2025년 시간대별 방문인구"
+- "화성문화제 20대 매출 분석"
+- "정조대왕 능행차 성별 소비금액"
+"""
+            return answer + disclaimer
+
+        except Exception as e:
+            logger.error("Google Search Grounding 실패, 기본 답변으로 전환: %s", e)
+            return self._generate_legacy_answer(question)
+
+    def _generate_legacy_answer(self, question: str) -> str:
+        """Google Search 실패 시 Gemini 학습 지식 기반 답변 (fallback)"""
         prompt = f"""당신은 축제 데이터 분석을 도와주는 친절한 AI 챗봇입니다.
 
 [질문]
@@ -1130,87 +1302,15 @@ SQL:"""
 
 [상황]
 데이터베이스에서 이 질문에 대한 답을 찾을 수 없습니다.
-
-[답변 가이드]
-✅ **답변 가능:**
-   - 인사, 감사 표현
-   - 일반 지식: 역사, 문화, 과학, 기술, 프로그래밍, 지리, 인물
-   - 지역 기본 정보: 면적, 인구, 일반적 위치, 주소, 역사적 사실
-     (예: 시청 위치, 관공서 주소, 유명 랜드마크 위치 - 일반 상식으로 답변 가능)
-   - 챗봇 사용법, 축제 관련 지식
-
-❌ **답변 불가:**
-   - 실시간 정보: 날씨, 뉴스, 주가, 환율, 교통 상황, 정확한 실시간 GPS 좌표
-   - 전문 조언: 의료, 법률, 재무, 투자
-   - 지역 실시간 정보: 맛집 추천, 영업 시간, 부동산 시세
-
-⚠️ 중요: "위치"는 두 가지로 구분하세요
-   - ✅ 일반적 위치/주소 (시청, 관공서, 유명 건물) → 답변 가능
-   - ❌ 실시간 위치 추적, GPS 좌표, 길찾기 → 답변 불가
+일반 지식 범위 내에서 답변하고, 실시간 정보가 필요한 경우 관련 서비스 확인을 안내하세요.
 
 [톤 & 스타일]
-- 친근하고 자연스럽게 대화하듯이 답변하세요
+- 친근하고 자연스럽게 대화
 - 축제 데이터 분석이 주 업무임을 자연스럽게 언급
-- 답변 불가 시: 이유를 친절히 설명하고 대신 도울 수 있는 것 제안
-- 적절한 경우 이모지 사용 가능 (과하지 않게)
-
-[답변 예시]
-
-인사 질문 ("안녕하세요!"):
-"안녕하세요! 반갑습니다 😊 저는 축제 데이터를 분석하는 AI 챗봇이에요.
-특정 축제의 방문인구, 매출, 연령대별 소비 패턴 같은 데이터를 분석해드릴 수 있습니다.
-궁금하신 축제가 있으시면 편하게 물어보세요!"
-
-실시간 정보 질문 ("오늘 날씨?"):
-"아, 죄송해요! 실시간 날씨 정보는 제가 제공하기 어렵습니다.
-날씨 앱을 확인해보시는 게 정확할 거예요 ☀️
-
-대신 축제 데이터 분석은 제가 잘할 수 있어요!
-예를 들어 '수원축제 2025 시간대별 방문인구' 같은 질문이면
-자세한 분석을 해드릴 수 있습니다."
-
-상식 질문 ("수원 화성 언제 지어졌어?"):
-"수원 화성은 1794년부터 1796년까지 약 2년에 걸쳐 축조되었어요.
-정조대왕이 아버지 사도세자를 위해 만든 계획도시의 핵심이었죠 🏯
-
-참고로 수원 화성과 관련된 축제 데이터도 분석할 수 있어요!
-'수원화성문화제 방문인구' 같은 질문도 환영합니다."
-
-기술/프로그래밍 질문 ("jinja prompt templates이 뭐야?"):
-"Jinja는 Python에서 사용하는 템플릿 엔진이에요! 📝
-주로 HTML 파일에 동적으로 데이터를 넣을 때 사용하죠.
-
-예를 들어 '{{ 변수명 }}' 이런 식으로 사용하고,
-반복문이나 조건문도 템플릿 안에서 쓸 수 있어서 편리합니다.
-
-저는 축제 데이터 분석이 주 업무지만, 일반적인 프로그래밍 질문도 도와드릴 수 있어요! 😊"
-
-지역 기본 정보 질문 ("수원시의 크기가 얼마야?" / "수원시 규모를 알고 싶어"):
-"수원시는 경기도에 위치한 도시로, 면적은 약 121.1km²이고,
-인구는 약 120만 명 정도입니다 (2024년 기준). 🏙️
-
-수원시는 수원화성으로 유명한 역사 도시이자 현대적인 도시랍니다!
-
-혹시 수원시에서 열리는 축제 데이터 분석이 필요하시면
-'수원화성문화제 방문인구' 같은 질문도 환영합니다! 😊"
-
-위치 정보 질문 ("수원 시청 위치 알려줘"):
-"수원시청은 경기도 수원시 팔달구 효원로 241에 위치해 있습니다! 🏛️
-
-수원시청은 팔달구에 있으며, 수원화성과도 가까운 곳에 자리잡고 있어요.
-대중교통으로 접근하기도 편리한 곳입니다.
-
-저는 축제 데이터 분석이 주 업무이지만,
-이런 기본적인 위치 정보는 도움드릴 수 있어요! 😊"
-
-중요: 지역의 "면적", "인구", "크기", "규모", "위치", "주소" 같은 기본 정보는 일반 상식이므로 답변 가능합니다.
-시청, 관공서, 유명 랜드마크의 위치는 "실시간 정보"가 아니라 "일반 상식"입니다.
+- 적절한 이모지 사용
 
 답변:"""
-
         answer = self.llm.invoke(prompt).content.strip()
-
-        # 면책 문구 자동 추가
         disclaimer = """
 
 ---
@@ -1224,7 +1324,6 @@ SQL:"""
 - "화성문화제 20대 매출 분석"
 - "정조대왕 능행차 성별 소비금액"
 """
-
         return answer + disclaimer
 
     # ──────────────────────────────────────────────
@@ -1288,6 +1387,22 @@ SQL:"""
                 'festival_context': festival_ctx,
                 'intent': '축제_정보',
                 'answer': answer
+            }
+
+        # ── 랭킹/비교 모드 ──
+        if festival_ctx.get('_ranking'):
+            logger.info("[축제 랭킹 비교 모드]")
+            ranking_result = self._answer_festival_ranking(
+                festival_ctx['all_festivals'], question,
+                search_year=festival_ctx.get('_year'),
+                search_region=festival_ctx.get('_region'),
+            )
+            logger.info("답변:\n%s", ranking_result['answer'])
+            return {
+                'question': question,
+                'intent': '축제_순위',
+                'sql_list': [ranking_result['sql']],
+                'answer': ranking_result['answer'],
             }
 
         # ── STEP 2: 질문 분해 → 테이블 목록 (LLM이 선택) ──
@@ -1380,6 +1495,25 @@ SQL:"""
             meta = json.dumps({'type': 'meta', 'intent': '축제_정보', 'festival_context': safe_ctx, 'sql_list': None}, ensure_ascii=False)
             yield f"data: {meta}\n\n"
             yield f"data: {json.dumps({'type': 'chunk', 'text': answer}, ensure_ascii=False)}\n\n"
+            yield "data: [DONE]\n\n"
+            return
+
+        # ── 랭킹/비교 모드 ──
+        if festival_ctx.get('_ranking'):
+            logger.info("[스트리밍] 축제 랭킹 비교 모드")
+            ranking_result = self._answer_festival_ranking(
+                festival_ctx['all_festivals'], question,
+                search_year=festival_ctx.get('_year'),
+                search_region=festival_ctx.get('_region'),
+            )
+            meta = json.dumps({
+                'type': 'meta',
+                'intent': '축제_순위',
+                'festival_context': None,
+                'sql_list': [ranking_result['sql']],
+            }, ensure_ascii=False)
+            yield f"data: {meta}\n\n"
+            yield f"data: {json.dumps({'type': 'chunk', 'text': ranking_result['answer']}, ensure_ascii=False)}\n\n"
             yield "data: [DONE]\n\n"
             return
 
