@@ -93,13 +93,14 @@ class ImprovedTextToSQL:
             raise
 
         self.llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash",
+            model="gemini-2.5-flash-lite",
             temperature=0,
             google_api_key=os.getenv("GOOGLE_API_KEY")
         )
         self.search_client = google_genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
         self.column_definitions = self._load_column_definitions()
         self.schema_info = self._get_schema_info()
+        self._tables_summary_cache = self._get_all_tables_summary()  # 한 번만 계산
         logger.info("[개선된 버전] LLM이 %d개 테이블 중 직접 선택합니다", len(self.schema_info['details']))
         logger.info("컬럼 정의서: %d개 테이블", len(self.column_definitions))
 
@@ -745,8 +746,7 @@ reprt_id 숫자만 반환 (다른 텍스트 없이):"""
         ✅ 개선: INTENT_TABLE_MAP 제거
         LLM이 88개 테이블 목록에서 직접 필요한 테이블 선택
         """
-        # 전체 테이블 목록 요약
-        tables_summary = self._get_all_tables_summary()
+        tables_summary = self._tables_summary_cache  # 캐시 사용 (매번 재계산 X)
 
         prompt = f"""당신은 데이터베이스 전문가입니다.
 
@@ -1335,9 +1335,14 @@ SQL:"""
               previous_festival_context: dict | None = None) -> dict | None:
         logger.info("질문: %s", question)
 
-        # ── STEP 1: 축제 컨텍스트 ──
-        logger.info("[1단계] TB_ANALYSIS_REPORT 축제 탐색...")
-        festival_ctx = self._extract_festival_context(question, conversation_history, previous_festival_context)
+        # ── STEP 1+2 병렬: 축제 컨텍스트 탐색 & 테이블 선택 동시 실행 ──
+        logger.info("[1+2단계 병렬] 축제 탐색 & 테이블 선택 동시 시작...")
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            future_ctx    = executor.submit(self._extract_festival_context, question, conversation_history, previous_festival_context)
+            future_tables = executor.submit(self._decompose_question, question)
+            festival_ctx  = future_ctx.result()
+            tables_prefetch = future_tables.result()
+
         if not festival_ctx:
             logger.info("축제 컨텍스트 없음 → Gemini 일반 답변 모드")
             fallback_answer = self._generate_fallback_answer(question)
@@ -1405,9 +1410,8 @@ SQL:"""
                 'answer': ranking_result['answer'],
             }
 
-        # ── STEP 2: 질문 분해 → 테이블 목록 (LLM이 선택) ──
-        logger.info("[2단계] LLM이 필요 테이블 선택 중...")
-        tables = self._decompose_question(question)
+        # ── STEP 2: 테이블 목록 (병렬 prefetch 결과 사용) ──
+        tables = tables_prefetch
         if not tables:
             logger.error("LLM이 테이블을 선택하지 못했습니다.")
             fallback_answer = self._generate_fallback_answer(question)
@@ -1417,6 +1421,7 @@ SQL:"""
                 'intent': 'fallback',
                 'answer': fallback_answer
             }
+        logger.info("[테이블 선택 완료] %s", tables)
 
         # ── STEP 3: 테이블별 SQL 생성 & 실행 (병렬) ──
         logger.info("[3단계] 테이블별 SQL 생성 & 실행 (%d개) - 병렬 처리...", len(tables))
@@ -1466,7 +1471,14 @@ SQL:"""
         """
         logger.info("[스트리밍] 질문: %s", question)
 
-        festival_ctx = self._extract_festival_context(question, conversation_history, previous_festival_context)
+        # 축제 컨텍스트 탐색 & 테이블 선택 병렬 실행
+        logger.info("[스트리밍] 1+2단계 병렬 시작...")
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            future_ctx      = executor.submit(self._extract_festival_context, question, conversation_history, previous_festival_context)
+            future_tables   = executor.submit(self._decompose_question, question)
+            festival_ctx    = future_ctx.result()
+            tables_prefetch = future_tables.result()
+
         if not festival_ctx:
             fallback_answer = self._generate_fallback_answer(question)
             meta = json.dumps({'type': 'meta', 'intent': 'fallback', 'festival_context': None, 'sql_list': None}, ensure_ascii=False)
@@ -1517,7 +1529,7 @@ SQL:"""
             yield "data: [DONE]\n\n"
             return
 
-        tables = self._decompose_question(question)
+        tables = tables_prefetch
         if not tables:
             fallback_answer = self._generate_fallback_answer(question)
             meta = json.dumps({'type': 'meta', 'intent': 'fallback', 'festival_context': None, 'sql_list': None}, ensure_ascii=False)

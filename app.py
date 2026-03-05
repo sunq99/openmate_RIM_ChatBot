@@ -252,7 +252,7 @@ if question:
         st.markdown(question)
 
     with st.chat_message("assistant"):
-        with st.spinner("분석 중..."):
+        with st.spinner("답변을 생성중입니다..."):
             history = _build_conversation_history(st.session_state.messages)
             prev_ctx = st.session_state.last_meta.get("festival_context")
             prev_analysis = st.session_state.last_analysis_context
@@ -260,8 +260,7 @@ if question:
                                     conversation_history=history,
                                     previous_festival_context=prev_ctx,
                                     previous_analysis_context=prev_analysis or None)
-
-        full_answer = st.write_stream(gen)
+            full_answer = st.write_stream(gen)
 
         render_intent_badge(meta.get("intent"))
         render_charts(meta.get("chart_data"))
